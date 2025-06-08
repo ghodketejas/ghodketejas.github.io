@@ -1,0 +1,2 @@
+# ghodketejas.github.io
+This website was created for the Web Application Programming and Hacking (WAPH) course. It showcases my professional profile, skills, and projects, and includes hands-on work with HTML, CSS, JavaScript, APIs, and GitHub Pages.
