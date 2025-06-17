@@ -16,7 +16,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../wallpapers/gplay.png");
+  background-image: url("../wallpapers/inspiration-geometry.png");
   background-repeat: repeat;
   opacity: 0.05;
   z-index: -1;
@@ -27,15 +27,15 @@ body::before {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 60px;
-  background: radial-gradient(circle at top center, #1a1a1a 0%, #0f0f0f 100%);
+  background: radial-gradient(circle at center, rgba(15, 15, 15, 0.8) 0%, rgba(15, 15, 15, 0.6) 100%);
   min-height: 100vh;
 }
 
 /* Profile image styling */
 .landing img {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
+  width: 350px;
+  height: 460px;
+  object-fit: fill;
   object-position: top center;
   border-radius: 40px;
   border: 4px solid #0dcaf0;
