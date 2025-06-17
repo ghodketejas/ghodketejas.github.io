@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tejas Ghodke | Resume</title>
-  <link rel="stylesheet" href="css/coded_resume-style.css">
+
+  <!-- Bootstrap and Shared Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/coded_resume-style.css" />
 </head>
 <body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Tejas Ghodke</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="coded_resume.html">My Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="waph.html">WAPH Course</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="resume-content">
   <header>
     <h1>Tejas Ghodke</h1>
     <p>Cincinnati, OH | (513) 537-3591 | <a href="mailto:ghodketg@mail.uc.edu">ghodketg@mail.uc.edu</a></p>
@@ -16,82 +39,72 @@
     </p>
   </header>
 
-  <main>
-    <section>
-      <h2>Education</h2>
-      <p><strong>University of Cincinnati</strong>, Bachelor of Science in Computer Science — Graduation: May 2027</p>
-      <ul>
-        <li>Dean's List</li>
-        <li>CEAS International Outreach Scholarship</li>
-        <li>Relevant Coursework: Design and Analysis of Algorithms, Software Engineering, Database Design and Development, Probability and Statistics, Web Applications and Hacking</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Education</h2>
+    <p><strong>University of Cincinnati</strong>, Bachelor of Science in Computer Science — Graduation: May 2027</p>
+    <ul>
+      <li>Dean's List</li>
+      <li>CEAS International Outreach Scholarship</li>
+      <li>Relevant Coursework: Design and Analysis of Algorithms, Software Engineering, Database Design and Development, Probability and Statistics, Web Applications and Hacking</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Skills</h2>
-      <p><strong>Programming:</strong> Python (Certified), Java (OCAJP) SE 8, C/C++, HTML/CSS, MATLAB, Dart, SQL, R, JavaScript</p>
-      <p><strong>Operating Systems:</strong> Linux (multiple flavors), Windows, MacOS, Android, iOS, ChromeOS</p>
-      <p><strong>Tools and Software:</strong> SpaCy, PyTorch, Git, Anaconda, Docker, Android Studio, MySQL, CUDA, LabView, PowerBi</p>
-    </section>
+  <section>
+    <h2>Skills</h2>
+    <p><strong>Programming:</strong> Python (Certified), Java (OCAJP) SE 8, C/C++, HTML/CSS, MATLAB, Dart, SQL, R, JavaScript</p>
+    <p><strong>Operating Systems:</strong> Linux (multiple flavors), Windows, MacOS, Android, iOS, ChromeOS</p>
+    <p><strong>Tools and Software:</strong> SpaCy, PyTorch, Git, Anaconda, Docker, Android Studio, MySQL, CUDA, LabView, PowerBi</p>
+  </section>
 
-    <section>
-      <h2>Experience</h2>
-      <h3>Campus Recreation Center | Cincinnati, Ohio</h3>
-      <p><em>May 2023 – Present</em><br><strong>Aquatics Supervisor</strong></p>
-      <ul>
-        <li>Monitored pool and facility conditions through regular inspections to maintain exceptional safety and hygiene standards.</li>
-        <li>Enforced rules, managed risk, and addressed patron concerns with professionalism.</li>
-        <li>Implemented safety protocols, guided lifeguards through drills, and delivered hands-on emergency response.</li>
-        <li>Fostered a collaborative environment and mentored staff with ongoing support and feedback.</li>
-      </ul>
+  <section>
+    <h2>Experience</h2>
+    <h3>Campus Recreation Center | Cincinnati, Ohio</h3>
+    <p><em>May 2023 – Present</em><br><strong>Aquatics Supervisor</strong></p>
+    <ul>
+      <li>Monitored pool and facility conditions through regular inspections to maintain exceptional safety and hygiene standards.</li>
+      <li>Enforced rules, managed risk, and addressed patron concerns with professionalism.</li>
+      <li>Implemented safety protocols, guided lifeguards through drills, and delivered hands-on emergency response.</li>
+      <li>Fostered a collaborative environment and mentored staff with ongoing support and feedback.</li>
+    </ul>
 
-      <h3>iKomet Technology Solutions | Pune, India</h3>
-      <p><em>February 2024 – April 2024</em><br><strong>Junior Intern</strong></p>
-      <ul>
-        <li>Developed a Python program using SpaCy and pandas to extract, parse, and transfer data from large documents into Excel.</li>
-        <li>Built a custom pipeline for textual data processing, ensuring classification and structured output.</li>
-        <li>Automated workflows to enhance visualization accuracy and data analysis efficiency.</li>
-      </ul>
-    </section>
+    <h3>iKomet Technology Solutions | Pune, India</h3>
+    <p><em>February 2024 – April 2024</em><br><strong>Junior Intern</strong></p>
+    <ul>
+      <li>Developed a Python program using SpaCy and pandas to extract, parse, and transfer data from large documents into Excel.</li>
+      <li>Built a custom pipeline for textual data processing, ensuring classification and structured output.</li>
+      <li>Automated workflows to enhance visualization accuracy and data analysis efficiency.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      <h3>Advanced Tic-Tac-Toe Game</h3>
-      <p><em>April 2024 – July 2024</em><br><strong>Flutter, Dart, Android Studio</strong></p>
-      <ul>
-        <li>Created an interactive mobile tic-tac-toe game with dynamic AI difficulty and custom UI.</li>
-        <li>Utilized Flutter widgets and best practices in Dart and OOP.</li>
-        <li>Delivered a polished, responsive experience with enhanced user engagement.</li>
-      </ul>
+  <section>
+    <h2>Projects</h2>
+    <h3>Advanced Tic-Tac-Toe Game</h3>
+    <p><em>April 2024 – July 2024</em><br><strong>Flutter, Dart, Android Studio</strong></p>
+    <ul>
+      <li>Created an interactive mobile tic-tac-toe game with dynamic AI difficulty and custom UI.</li>
+      <li>Utilized Flutter widgets and best practices in Dart and OOP.</li>
+      <li>Delivered a polished, responsive experience with enhanced user engagement.</li>
+    </ul>
 
-      <h3>Snake AI Model</h3>
-      <p><em>January 2025 – March 2025</em><br><strong>Anaconda, PyTorch, Pygame, Scikit-learn, Matplotlib</strong></p>
-      <ul>
-        <li>Developed a reinforcement learning agent to play Snake using Deep Q Learning.</li>
-        <li>Used Anaconda for isolated environments and reproducible training.</li>
-        <li>Visualized training performance with scikit-learn and matplotlib.</li>
-      </ul>
-    </section>
+    <h3>Snake AI Model</h3>
+    <p><em>January 2025 – March 2025</em><br><strong>Anaconda, PyTorch, Pygame, Scikit-learn, Matplotlib</strong></p>
+    <ul>
+      <li>Developed a reinforcement learning agent to play Snake using Deep Q Learning.</li>
+      <li>Used Anaconda for isolated environments and reproducible training.</li>
+      <li>Visualized training performance with scikit-learn and matplotlib.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Availability</h2>
-      <p>Available for co-op in <strong>Fall 2025</strong></p>
-    </section>
+  <section>
+    <h2>Availability</h2>
+    <p>Available for co-op in <strong>Fall 2025</strong></p>
+  </section>
+</main>
 
-    <!--<section>
-      <h2>Contact Me</h2>
-      <div class="contact-form" style="max-width: 900px; margin: 0 auto;">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLScFuU6MxWXKf9uuBK9a5goKpeWfiQbNwLLwzYVPPUFmrLOzZA/viewform?embedded=true"
-          width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">
-          Loading…
-        </iframe>
-      </div>
-    </section> -->
-  </main>
+<footer>
+  <p>© 2025 Tejas Ghodke</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Tejas Ghodke</p>
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
