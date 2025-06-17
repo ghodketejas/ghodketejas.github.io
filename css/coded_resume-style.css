@@ -1,54 +1,82 @@
+/* Base Theme */
 body {
   font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   background-color: #0f0f0f;
   color: #e0e0e0;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
+/* Patterned Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../wallpapers/gplay.png");
+  background-repeat: repeat;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Header & Footer Styling */
 header, footer {
+  background-color: #1c1c1c;
   text-align: center;
   padding: 20px;
+  color: #ccc;
 }
 
 header h1 {
   margin: 0;
-  font-size: 32px;
-  color: #ffffff;
+  font-size: 2.4rem;
+  text-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
 }
 
 header p, header a {
   font-size: 14px;
   color: #0dcaf0;
   text-decoration: none;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 header a:hover {
   text-decoration: underline;
 }
 
-.resume-content {
+/* Main Resume Area */
+main.resume-content {
   max-width: 850px;
   margin: auto;
   padding: 100px 20px 60px;
 }
 
+/* Section Headings */
 h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0dcaf0;
   border-bottom: 2px solid #0dcaf0;
   padding-bottom: 5px;
   margin-top: 40px;
-  color: #0dcaf0;
 }
 
 h3 {
   margin-bottom: 5px;
-  font-size: 18px;
-  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #e0e0e0;
 }
 
 p, li {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 ul {
@@ -56,15 +84,19 @@ ul {
 }
 
 footer {
-  font-size: 14px;
+  text-align: center;
+  margin-top: 60px;
   color: #888;
+  font-size: 14px;
+  padding-bottom: 20px;
 }
 
+/* Resume Links */
 a {
   color: #0dcaf0;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #00bcd4;
   text-decoration: underline;
 }
