@@ -18,7 +18,7 @@ body::before {
   height: 100%;
   background-image: url("../wallpapers/gplay.png");
   background-repeat: repeat;
-  opacity: 0.75;
+  opacity: 0.25;
   z-index: -1;
 }
 
@@ -34,7 +34,7 @@ body::before {
 /* Profile image styling */
 .landing img {
   width: 350px;
-  height: 460px;
+  height: 485px;
   object-fit: fill;
   object-position: top center;
   border-radius: 40px;
