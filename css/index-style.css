@@ -8,8 +8,8 @@ body {
       padding-bottom: 60px;
     }
     .landing img {
-      width: 260px;
-      height: 260px;
+      width: 400px;
+      height: 400px;
       object-fit: cover;
       object-position: top center; /* <--- ADDED THIS */
       border-radius: 30px; /* or 50% for circular */
