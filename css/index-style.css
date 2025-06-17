@@ -16,7 +16,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+  background-image: "wallpapers/axiom-pattern.png";
   opacity: 0.05;
   z-index: -1;
 }
