@@ -20,34 +20,51 @@ body::before {
   height: 100%;
   background-image: url("../wallpapers/gplay.png");
   background-repeat: repeat;
-  opacity: 0.05;
+  opacity: 0.25;
   z-index: -1;
 }
 
 /* Header & Footer Styling */
-header, footer {
+header {
   background-color: #1c1c1c;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px 20px;
   color: #ccc;
 }
 
-header h1 {
+.resume-title {
   margin: 0;
-  font-size: 2.4rem;
-  text-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(13, 202, 240, 0.6),
+               0 0 20px rgba(13, 202, 240, 0.3);
 }
 
-header p, header a {
+.contact-line {
   font-size: 14px;
   color: #0dcaf0;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 5px;
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
-header a:hover {
+.contact-links a {
+  font-size: 14px;
+  color: #0dcaf0;
+  margin: 0 6px;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
   text-decoration: underline;
+}
+
+footer {
+  background-color: #1c1c1c;
+  text-align: center;
+  margin-top: 60px;
+  color: #888;
+  font-size: 14px;
+  padding-bottom: 20px;
 }
 
 /* Main Resume Area */
@@ -81,14 +98,6 @@ p, li {
 
 ul {
   padding-left: 20px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 60px;
-  color: #888;
-  font-size: 14px;
-  padding-bottom: 20px;
 }
 
 /* Resume Links */
