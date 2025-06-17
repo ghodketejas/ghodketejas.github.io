@@ -8,8 +8,8 @@ body {
       padding-bottom: 60px;
     }
     .landing img {
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       object-fit: contain;
       object-position: 50% center; 
       border-radius: 25px; 
