@@ -16,7 +16,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: "wallpapers/gplay.png";
+  background-image: url("wallpapers/gplay.png");
+  background-repeat: repeat;
   opacity: 0.05;
   z-index: -1;
 }
