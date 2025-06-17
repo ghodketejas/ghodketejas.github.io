@@ -10,7 +10,7 @@ body {
     .landing img {
       width: 400px;
       height: 400px;
-      object-fit: cover;
+      object-fit: contain;
       object-position: 50% center; 
       border-radius: 25px; 
       border: 4px solid #343a40;
