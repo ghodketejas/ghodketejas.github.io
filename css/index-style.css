@@ -8,7 +8,7 @@ body {
   position: relative;
 }
 
-/* Background pattern: circuit style */
+/* Background pattern: */
 body::before {
   content: "";
   position: fixed;
@@ -16,7 +16,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("wallpapers/gplay.png");
+  background-image: url("../wallpapers/gplay.png");
   background-repeat: repeat;
   opacity: 0.05;
   z-index: -1;
