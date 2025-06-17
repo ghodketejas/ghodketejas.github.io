@@ -18,7 +18,7 @@ body::before {
   height: 100%;
   background-image: url("../wallpapers/inspiration-geometry.png");
   background-repeat: repeat;
-  opacity: 0.05;
+  opacity: 0.75;
   z-index: -1;
 }
 
@@ -27,7 +27,7 @@ body::before {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 60px;
-  background: radial-gradient(circle at center, rgba(15, 15, 15, 0.8) 0%, rgba(15, 15, 15, 0.6) 100%);
+  background: radial-gradient(circle at top center, #1a1a1a 0%, #0f0f0f 100%);
   min-height: 100vh;
 }
 
