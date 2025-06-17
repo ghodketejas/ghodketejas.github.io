@@ -8,12 +8,13 @@ body {
       padding-bottom: 60px;
     }
     .landing img {
-      width: 400px;
-      height: 300px;
+      width: 260px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 25%;
+      object-position: top center; /* <--- ADDED THIS */
+      border-radius: 30px; /* or 50% for circular */
       border: 4px solid #343a40;
-      margin-bottom: 100px;
+      margin-bottom: 20px;
     }
     .social-icons {
       display: flex;
