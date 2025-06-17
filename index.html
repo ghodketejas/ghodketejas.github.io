@@ -1,39 +1,67 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tejas Ghodke - Professional Profile</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejas Ghodke | Software Engineer & Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/index-style.css">
 </head>
-<body class="container py-5">
-  <header>
-    <h1>Tejas Ghodke</h1>
-    <img src="professional_picture_1.jpg" alt="Professional Picture of Tejas" width="150" height="150">
-    <p>Email: <span id="email">ghodketg@mail.uc.edu</span></p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>3rd year CS major at University of Cincinnati. Experienced in AI/ML, front-end, and backend development.</p>
-  </section>
+<body>
 
-  <section>
-    <h2>Resume</h2>
-    <a href="resume.pdf" target="_blank">Download my resume</a>
-  </section>
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Tejas Ghodke</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="coded_resume.html">My Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="waph.html">WAPH Course</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <section>
-    <h2>Education & Skills</h2>
-    <ul>
-      <li>BS in Computer Science, University of Cincinnati</li>
-      <li>Skills: Python, JavaScript, React, Node.js, AI/ML</li>
-    </ul>
-  </section>
+<!-- LANDING PAGE CONTENT -->
+<div class="container landing">
+  <img src="images/professional_picture_1.jpg" alt="Tejas Ghodke">
+  <h1 class="mt-4">Hi, I'm Tejas Ghodke 👋</h1>
+  <p class="lead">Computer Science Student | Aspiring AI/ML Engineer | Web Dev Enthusiast</p>
+  <p>I’m currently a 3rd year CS student at the University of Cincinnati. I’m passionate about building intelligent, ethical systems and creating tools that help people.</p>
+  
+  <div class="social-icons">
+    <a href="https://github.com/ghodketejas" target="_blank">
+      <i class="bi bi-github"></i>
+      <div>GitHub</div>
+    </a>
+    <a href="https://linkedin.com/in/ghodketguc/" target="_blank">
+      <i class="bi bi-linkedin"></i>
+      <div>LinkedIn</div>
+    </a>
+    <a href="mailto:ghodketg@mail.uc.edu">
+      <i class="bi bi-envelope"></i>
+      <div>Email</div>
+    </a>
+  </div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Tejas Ghodke</p>
-  </footer>
+<!-- BOOTSTRAP JS + ICONS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
 </html>
