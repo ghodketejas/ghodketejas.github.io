@@ -38,6 +38,10 @@ body::before {
   color: #0dcaf0 !important;
 }
 
+.navbar-dark.bg-dark {
+  background-color: #0a0a0a !important;
+}
+
 /* Landing Page Section */
 .landing {
   text-align: center;
@@ -48,8 +52,8 @@ body::before {
 
 /* Profile Image */
 .landing img {
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 485px;
   object-fit: fill;
   border-radius: 40px;
   border: 4px solid #0dcaf0;
