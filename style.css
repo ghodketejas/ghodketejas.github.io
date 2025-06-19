@@ -184,6 +184,11 @@ a:hover {
   font-size: 16px;
 }
 
+.container {
+  padding-top: 80px;
+}
+
 #visit-message {
-  margin-top: 70px; /* Pushes it below the navbar */
+  display: none;
+  animation: fadeIn 0.6s ease-in-out;
 }
