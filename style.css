@@ -184,12 +184,8 @@ a:hover {
   font-size: 16px;
 }
 
-main, .landing, .page-content {
-  padding-top: 80px;
-}
-
 #visit-message {
   display: none;
-  padding: 100px;
+  padding: 50px;
   animation: fadeIn 0.6s ease-in-out;
 }
