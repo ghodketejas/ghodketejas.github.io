@@ -15,14 +15,40 @@ function getCookie(name) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // --- Last Visit Message ---
   const lastVisit = getCookie('lastVisit');
   const showMessagePref = getCookie('showVisitMessage');
   const messageDiv = document.getElementById('visit-message');
   const now = new Date().toLocaleString();
-
   setCookie('lastVisit', now, 365); // Always update visit
 
-  // Update "Last Edited" field dynamically if present
+  if (messageDiv && showMessagePref !== 'false' && sessionStorage.getItem('visitMessageShown') !== 'true') {
+    sessionStorage.setItem('visitMessageShown', 'true');
+
+    if (!lastVisit) {
+      messageDiv.textContent = 'Welcome to my portfolio for the first time! This website exhibits whatever I have learnt or achieved during my miniscule existence on this large planet.';
+      messageDiv.style.display = 'block';
+    } else {
+      messageDiv.innerHTML = `
+        Welcome back! Your last visit was ${lastVisit}.<br>
+        <button class="btn btn-sm btn-success mt-2 me-2" id="keepMessage">Yes, keep showing</button>
+        <button class="btn btn-sm btn-danger mt-2" id="hideMessage">No, hide it in future</button>
+      `;
+      messageDiv.style.display = 'block';
+
+      document.getElementById('keepMessage').addEventListener('click', function () {
+        setCookie('showVisitMessage', 'true', 365);
+        messageDiv.innerHTML = 'Got it! We’ll keep showing this message.';
+      });
+
+      document.getElementById('hideMessage').addEventListener('click', function () {
+        setCookie('showVisitMessage', 'false', 365);
+        messageDiv.innerHTML = 'You won’t see this message again.';
+      });
+    }
+  }
+
+  // --- Dynamic "Last Edited" Date ---
   const lastEdited = document.getElementById('last-edited');
   if (lastEdited) {
     const today = new Date();
@@ -30,38 +56,31 @@ document.addEventListener('DOMContentLoaded', function () {
     lastEdited.textContent = today.toLocaleDateString('en-US', options);
   }
 
-  // Don't run if element not found or if user disabled message
-  if (!messageDiv || showMessagePref === 'false') return;
+  // --- Draggable Hot Menu ---
+  const menu = document.getElementById('hot-menu');
+  if (menu) {
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
 
-  // Avoid showing again this session
-  if (sessionStorage.getItem('visitMessageShown') === 'true') return;
+    menu.addEventListener('mousedown', function (e) {
+      isDragging = true;
+      offsetX = e.clientX - menu.offsetLeft;
+      offsetY = e.clientY - menu.offsetTop;
+      menu.style.position = 'absolute';
+      menu.style.zIndex = 9999;
+      menu.style.cursor = 'move';
+    });
 
-  // Mark as shown for this session
-  sessionStorage.setItem('visitMessageShown', 'true');
+    document.addEventListener('mousemove', function (e) {
+      if (isDragging) {
+        menu.style.left = e.clientX - offsetX + 'px';
+        menu.style.top = e.clientY - offsetY + 'px';
+      }
+    });
 
-  // First time visitor
-  if (!lastVisit) {
-    messageDiv.textContent =
-      'Welcome to my portfolio for the first time! This website exhibits whatever I have learnt or achieved during my miniscule existence on this large planet.';
-    messageDiv.style.display = 'block';
-    return;
+    document.addEventListener('mouseup', function () {
+      isDragging = false;
+    });
   }
-
-  // Returning visitor with no opt-out
-  messageDiv.innerHTML = `
-    Welcome back! Your last visit was ${lastVisit}.<br>
-    <button class="btn btn-sm btn-success mt-2 me-2" id="keepMessage">Yes, keep showing</button>
-    <button class="btn btn-sm btn-danger mt-2" id="hideMessage">No, hide it in future</button>
-  `;
-  messageDiv.style.display = 'block';
-
-  document.getElementById('keepMessage').addEventListener('click', function () {
-    setCookie('showVisitMessage', 'true', 365);
-    messageDiv.innerHTML = 'Got it! We’ll keep showing this message.';
-  });
-
-  document.getElementById('hideMessage').addEventListener('click', function () {
-    setCookie('showVisitMessage', 'false', 365);
-    messageDiv.innerHTML = 'You won’t see this message again.';
-  });
 });

@@ -28,16 +28,13 @@ body::before {
 .navbar {
   font-weight: 500;
 }
-
 .navbar-brand {
   font-weight: 600;
 }
-
 .nav-link.active,
 .nav-link:hover {
   color: #0dcaf0 !important;
 }
-
 .navbar-dark.bg-dark {
   background-color: #0a0a0a !important;
 }
@@ -68,20 +65,17 @@ body::before {
   gap: 40px;
   margin-top: 30px;
 }
-
 .social-icons a {
   text-decoration: none;
   color: #ccc;
   font-size: 1.2rem;
   text-align: center;
 }
-
 .social-icons i {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 5px;
 }
-
 .social-icons a:hover {
   color: #0dcaf0;
 }
@@ -93,32 +87,27 @@ header {
   padding: 30px 20px 20px;
   color: #ccc;
 }
-
 .resume-title {
   margin: 0;
   font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
 }
-
 .contact-line {
   font-size: 14px;
   color: #0dcaf0;
   margin-top: 10px;
   margin-bottom: 4px;
 }
-
 .contact-links a {
   font-size: 14px;
   color: #0dcaf0;
   margin: 0 6px;
   text-decoration: none;
 }
-
 .contact-links a:hover {
   text-decoration: underline;
 }
-
 .separator {
   color: #ffffff;
   padding: 0 5px;
@@ -131,27 +120,28 @@ main.resume-content {
   padding: 100px 20px 60px;
 }
 
+/* Headings */
 h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   color: #0dcaf0;
   border-bottom: 2px solid #0dcaf0;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
   margin-top: 40px;
 }
-
 h3 {
-  margin-bottom: 5px;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #e0e0e0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
+/* Typography */
 p, li {
   font-size: 15px;
   line-height: 1.7;
 }
-
 ul {
   padding-left: 20px;
 }
@@ -171,7 +161,6 @@ a {
   color: #0dcaf0;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -184,44 +173,49 @@ a:hover {
   font-size: 16px;
 }
 
+/* Visit Message */
 #visit-message {
   display: none;
-  padding: 50px 50px 10px 50px; /* top, right, bottom, left */
+  padding: 50px 50px 10px 50px;
   animation: fadeIn 0.6s ease-in-out;
-  margin: 80px auto 20px auto; /* margin-top for space below navbar */
+  margin: 80px auto 20px auto;
 }
 
+/* Hot Menu */
 #hot-menu {
   position: fixed;
   top: 100px;
   left: 20px;
+  width: 200px;
   background-color: rgba(13, 13, 13, 0.9);
   border: 1px solid #444;
   padding: 15px 20px;
   border-radius: 8px;
   z-index: 1000;
+  cursor: move;
+  transition: box-shadow 0.2s ease;
 }
-
+#hot-menu:hover {
+  box-shadow: 0 0 10px #0dcaf0;
+}
 #hot-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 #hot-menu ul li {
   margin-bottom: 10px;
 }
-
 #hot-menu a {
   color: #0dcaf0;
   text-decoration: none;
   font-weight: 500;
 }
-
 #hot-menu a:hover {
   text-decoration: underline;
 }
 
+/* Mobile Responsive Hot Menu */
 @media (max-width: 768px) {
   #hot-menu {
     position: static;
@@ -231,19 +225,36 @@ a:hover {
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
+    width: 100%;
   }
-
   #hot-menu ul {
     display: flex;
     flex-direction: row;
   }
-
   #hot-menu ul li {
     margin: 0;
   }
 }
 
+/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
+}
+
+/* Bootstrap Accordion Override */
+.accordion-button {
+  background-color: #181818;
+  color: #0dcaf0;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #111;
+  color: #0dcaf0;
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.25);
+}
+.accordion-body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
 }
