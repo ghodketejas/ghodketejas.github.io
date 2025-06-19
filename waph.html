@@ -169,6 +169,64 @@
         </div>
       </section>
 
+      <!-- Lab 2 -->
+      <section class="mb-5">
+        <h3 class="text-info">Lab 2: Front-end Web Development</h3>
+        <p>
+          In Lab 2, I created and deployed a full HTML page showcasing form handling, JavaScript interactivity, AJAX, jQuery, and public API integrations. I explored different types of styling methods (inline, internal, and external), implemented a digital and analog clock, and added dynamic behavior to enhance user interaction.
+        </p>
+
+        <ul>
+          <li>Created a form in raw HTML to submit user input to a PHP echo handler via GET</li>
+          <img src="images/task1a_1.png" alt="Lab 2 HTML Form Screenshot" class="img-fluid rounded shadow mb-3" />
+
+          <li>Added JavaScript for click-based date display, real-time clocks, and input key logging</li>
+          <pre><code>// Real-time digital clock
+      setInterval(() => {
+        const now = new Date();
+        document.getElementById("digit-clock").innerHTML = now.toLocaleTimeString();
+      }, 1000);</code></pre>
+
+          <li>Integrated a local JS file to show/hide email address with toggle behavior</li>
+
+          <li>Loaded and rendered a functional analog clock using an external JS library and canvas</li>
+          <img src="images/task1b.png" alt="Analog Clock Screenshot" class="img-fluid rounded shadow mb-3" />
+
+          <li>Implemented raw AJAX requests using <code>XMLHttpRequest</code> to send and display input asynchronously</li>
+          <pre><code>function getEcho() {
+        const input = document.getElementById("ajax-input").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("ajax-response").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "echo.php?data=" + encodeURIComponent(input), true);
+        xhttp.send();
+      }</code></pre>
+
+          <img src="images/task2a_2.png" alt="AJAX Response Screenshot" class="img-fluid rounded shadow mb-3" />
+
+          <li>Applied inline, internal, and external CSS to style content and buttons consistently</li>
+
+          <li>Used jQuery to simplify AJAX GET and POST requests</li>
+          <pre><code>// jQuery POST request
+      $.post("echo.php", { data: input }, function(data) {
+        $("#jquery-response").html("Server says:<br>You entered: " + data);
+      });</code></pre>
+
+          <li>Fetched a random programming joke using <strong>JokeAPI</strong></li>
+          <li>Used <strong>Agify.io</strong> Web API to predict age from user input</li>
+          <img src="images/task2d_3.png" alt="Agify API Response Screenshot" class="img-fluid rounded shadow mb-3" />
+        </ul>
+
+        <div class="alert alert-info mt-3">
+          <strong>What I Learned:</strong> Lab 2 gave me hands-on experience building dynamic, interactive web pages. I strengthened my understanding of form handling, DOM manipulation, and asynchronous data exchange using AJAX and jQuery. I also explored the integration of public APIs and enhanced the user interface using multiple layers of CSS. This lab elevated my front-end development skills with real-world, portfolio-ready features.
+        </div>
+      </section>
+
+      <!-- Lab 3 Placeholder -->
+
     </section>
 
     <!-- Hackathons Section -->
