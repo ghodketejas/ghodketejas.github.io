@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setCookie('lastVisit', now, 365); // Always update visit
 
+  // Update "Last Edited" field dynamically if present
+  const lastEdited = document.getElementById('last-edited');
+  if (lastEdited) {
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastEdited.textContent = today.toLocaleDateString('en-US', options);
+  }
+
   // Don't run if element not found or if user disabled message
   if (!messageDiv || showMessagePref === 'false') return;
 
