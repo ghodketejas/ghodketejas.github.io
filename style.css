@@ -192,14 +192,20 @@ a:hover {
 }
 
 #hot-menu {
+  width: 200px;
+  min-height: 100vh;
+  background-color: #141414;
+  border-right: 1px solid #444;
+  padding: 20px 15px;
   position: fixed;
-  top: 100px;
-  left: 20px;
-  background-color: rgba(13, 13, 13, 0.9);
-  border: 1px solid #444;
-  padding: 15px 20px;
-  border-radius: 8px;
-  z-index: 1000;
+  top: 56px; /* Below navbar */
+  left: 0;
+  z-index: 1020;
+}
+
+#waph-main {
+  margin-left: 200px; /* Matches sidebar width */
+  padding: 80px 40px 40px 40px;
 }
 
 #hot-menu ul {
@@ -209,13 +215,14 @@ a:hover {
 }
 
 #hot-menu ul li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 #hot-menu a {
   color: #0dcaf0;
   text-decoration: none;
   font-weight: 500;
+  display: block;
 }
 
 #hot-menu a:hover {
@@ -225,21 +232,23 @@ a:hover {
 @media (max-width: 768px) {
   #hot-menu {
     position: static;
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #444;
+  }
+
+  #waph-main {
+    margin-left: 0;
   }
 
   #hot-menu ul {
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
   }
 
   #hot-menu ul li {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 
