@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Don't run if element not found or if user disabled message
   if (!messageDiv || showMessagePref === 'false') return;
 
-  // ✅ NEW: Avoid showing again this session
+  // Avoid showing again this session
   if (sessionStorage.getItem('visitMessageShown') === 'true') return;
 
-  // ✅ Mark as shown for this session
+  // Mark as shown for this session
   sessionStorage.setItem('visitMessageShown', 'true');
 
   // First time visitor
