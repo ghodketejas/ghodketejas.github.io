@@ -20,16 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const messageDiv = document.getElementById('visit-message');
   const now = new Date().toLocaleString();
 
-  setCookie('lastVisit', now, 365); // Always update visit time
+  setCookie('lastVisit', now, 365); // Always update visit
 
-  if (!messageDiv) return; // safety check
+  // Don't run if element not found or if user disabled message
+  if (!messageDiv || showMessagePref === 'false') return;
 
-  // If user opted out previously, don't show message
-  if (showMessagePref === 'false') return;
+  // ✅ NEW: Avoid showing again this session
+  if (sessionStorage.getItem('visitMessageShown') === 'true') return;
 
-  // First visit
+  // ✅ Mark as shown for this session
+  sessionStorage.setItem('visitMessageShown', 'true');
+
+  // First time visitor
   if (!lastVisit) {
-    messageDiv.textContent = 'Welcome to my portfolio for the first time! This website exhibits whatever I have learnt or achieved during my miniscule existence on this large planet.';
+    messageDiv.textContent =
+      'Welcome to my portfolio for the first time! This website exhibits whatever I have learnt or achieved during my miniscule existence on this large planet.';
     messageDiv.style.display = 'block';
     return;
   }
@@ -42,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
   messageDiv.style.display = 'block';
 
-  // Button listeners
   document.getElementById('keepMessage').addEventListener('click', function () {
     setCookie('showVisitMessage', 'true', 365);
     messageDiv.innerHTML = 'Got it! We’ll keep showing this message.';
