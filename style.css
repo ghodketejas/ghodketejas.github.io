@@ -245,4 +245,5 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
