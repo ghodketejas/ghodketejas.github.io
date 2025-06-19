@@ -85,135 +85,143 @@
 
     <!-- Labs Section -->
     <section id="labs" class="mb-5">
-      <h2 class="text-info">Labs</h2>
-      <p class="text-light">
-        The labs in this course are hands-on exercises designed to reinforce core concepts in web development and security. These are not public and have been submitted privately to the instructor.
-      </p>
+    <h2 class="text-info">Labs</h2>
+    <p class="text-light">
+      The labs in this course are hands-on exercises designed to reinforce core concepts in web development and security. These are not public and have been submitted privately to the instructor.
+    </p>
 
-      <div class="accordion" id="labsAccordion">
+    <div class="accordion" id="labsAccordion">
 
-        <!-- Lab 0 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingLab0">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab0" aria-expanded="true" aria-controls="collapseLab0">
-              Lab 0: Environment Setup & Version Control
-            </button>
-          </h2>
-          <div id="collapseLab0" class="accordion-collapse collapse show" aria-labelledby="headingLab0" data-bs-parent="#labsAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Installed Ubuntu 22.04 as a virtual machine with 4 cores, 8 GB RAM, and 50 GB storage using VirtualBox</li>
-                <li>Installed essential packages: <code>Apache2</code>, <code>Git</code>, <code>Curl</code>, <code>OpenSSH Server</code>, and <code>Pandoc</code></li>
-                <li>Verified Apache setup by accessing the default webpage from host and VM IP addresses</li>
-                <img src="images/Apache2Host.png" alt="Apache Default Page Screenshot" class="img-fluid rounded shadow mb-3" />
-                <li>Cloned the course repository and created a private GitHub repo for lab submissions</li>
-                <li>Generated and registered an SSH key for secure Git operations</li>
-                <pre><code>ssh-keygen -t rsa -b 4096 -C "ghodketg@mail.uc.edu"</code></pre>
-                <li>Used Markdown and <code>Pandoc</code> to generate a formatted PDF report from <code>README.md</code></li>
-                <pre><code>pandoc README.md -o ghodketg-waph-lab0.pdf</code></pre>
-              </ul>
-              <div class="alert alert-info mt-3">
-                <strong>What I Learned:</strong> Through Lab 0, I learned how to create and configure a virtual Linux development environment, including essential tools like Git, Apache, SSH, and Pandoc. I gained practical experience setting up and testing a local web server, generating secure SSH keys, and using GitHub for version control. This setup now serves as the foundational environment for all future labs and projects in this course.
-              </div>
+      <!-- Lab 0 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingLab0">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab0" aria-expanded="true" aria-controls="collapseLab0">
+            Lab 0: Environment Setup & Version Control
+          </button>
+        </h2>
+        <div id="collapseLab0" class="accordion-collapse collapse show" aria-labelledby="headingLab0" data-bs-parent="#labsAccordion">
+          <div class="accordion-body">
+            <p>
+              This foundational lab introduced the tools and environment required for web application development and security testing. I set up a Linux-based virtual development environment, installed critical software packages, and configured Git for version control. Additionally, I tested the Apache web server and used SSH to securely push code to GitHub.
+            </p>
+            <ul>
+              <li>Installed Ubuntu 22.04 as a virtual machine with 4 cores, 8 GB RAM, and 50 GB storage using VirtualBox</li>
+              <li>Installed essential packages: <code>Apache2</code>, <code>Git</code>, <code>Curl</code>, <code>OpenSSH Server</code>, and <code>Pandoc</code></li>
+              <li>Verified Apache setup by accessing the default webpage from host and VM IP addresses</li>
+              <img src="images/Apache2Host.png" alt="Apache Default Page Screenshot" class="img-fluid rounded shadow mb-3" />
+              <li>Cloned the course repository and created a private GitHub repo for lab submissions</li>
+              <li>Generated and registered an SSH key for secure Git operations</li>
+              <pre><code>ssh-keygen -t rsa -b 4096 -C "ghodketg@mail.uc.edu"</code></pre>
+              <li>Used Markdown and <code>Pandoc</code> to generate a formatted PDF report from <code>README.md</code></li>
+              <pre><code>pandoc README.md -o ghodketg-waph-lab0.pdf</code></pre>
+            </ul>
+            <div class="alert alert-info mt-3">
+              <strong>What I Learned:</strong> Through Lab 0, I learned how to create and configure a virtual Linux development environment, including essential tools like Git, Apache, SSH, and Pandoc. I gained practical experience setting up and testing a local web server, generating secure SSH keys, and using GitHub for version control. This setup now serves as the foundational environment for all future labs and projects in this course.
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Lab 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingLab1">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab1" aria-expanded="false" aria-controls="collapseLab1">
-              Lab 1: Foundations of the Web
-            </button>
-          </h2>
-          <div id="collapseLab1" class="accordion-collapse collapse" aria-labelledby="headingLab1" data-bs-parent="#labsAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Used <strong>Wireshark</strong> to capture and analyze HTTP GET and response messages</li>
-                <img src="images/http_get_response.png" alt="Wireshark HTTP Capture" class="img-fluid rounded shadow mb-3" />
-                <li>Sent manual HTTP requests to a server using <strong>Telnet</strong> and compared the structure with browser-based requests</li>
-                <pre><code>telnet example.com 80
-    GET / HTTP/1.1
-    Host: example.com</code></pre>
-                <li>Developed a basic <strong>CGI "Hello World"</strong> app in C, hosted via Apache</li>
-                <pre><code>#include &lt;stdio.h&gt;
-    int main(void) {
-      printf("Content-Type: text/plain; charset=utf-8\n\n");
-      printf("Hello World CGI! From Tejas Ghodke, WAPH\n");
-      return 0;
-    }</code></pre>
-                <img src="images/browser_helloworld_cgi.png" alt="CGI Hello World Output" class="img-fluid rounded shadow mb-3" />
-                <li>Created a dynamic HTML-generating CGI script with embedded course/student metadata</li>
-                <li>Built a simple <strong>PHP application</strong> to echo user input and display server configuration</li>
-                <pre><code>&lt;?php
-    echo "You entered: " . $_REQUEST["data"];
-    ?&gt;</code></pre>
-                <img src="images/browser_echo_php.png" alt="PHP Echo Output Screenshot" class="img-fluid rounded shadow mb-3" />
-                <li>Demonstrated and analyzed <strong>HTTP GET vs POST methods</strong> using <code>curl</code> and browser testing</li>
-                <pre><code>curl -X POST http://localhost/echo.php -d "data=Tejas"</code></pre>
-                <li>Applied concepts of the client-server model, MIME headers, input handling, and basic web security</li>
-              </ul>
-              <div class="alert alert-info mt-3">
-                <strong>What I Learned:</strong> Lab 1 deepened my understanding of how the web works at the protocol level. I learned how HTTP requests and responses are structured, how web servers interpret them, and how to analyze network traffic using tools like Wireshark and Telnet. Additionally, I gained hands-on experience in developing simple CGI programs in C and PHP. This lab strengthened both my debugging and secure coding skills.
-              </div>
+      <!-- Lab 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingLab1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab1" aria-expanded="false" aria-controls="collapseLab1">
+            Lab 1: Foundations of the Web
+          </button>
+        </h2>
+        <div id="collapseLab1" class="accordion-collapse collapse" aria-labelledby="headingLab1" data-bs-parent="#labsAccordion">
+          <div class="accordion-body">
+            <p>
+              In this lab, I explored how the web functions at both the protocol and programming levels. Through a combination of network analysis and basic back-end scripting, I gained hands-on experience with the HTTP protocol, request/response mechanisms, and simple web server-side development using C and PHP.
+            </p>
+            <ul>
+              <li>Used <strong>Wireshark</strong> to capture and analyze HTTP GET and response messages</li>
+              <img src="images/http_get_response.png" alt="Wireshark HTTP Capture" class="img-fluid rounded shadow mb-3" />
+              <li>Sent manual HTTP requests to a server using <strong>Telnet</strong> and compared the structure with browser-based requests</li>
+              <pre><code>telnet example.com 80
+  GET / HTTP/1.1
+  Host: example.com</code></pre>
+              <li>Developed a basic <strong>CGI "Hello World"</strong> app in C, hosted via Apache</li>
+              <pre><code>#include &lt;stdio.h&gt;
+  int main(void) {
+    printf("Content-Type: text/plain; charset=utf-8\n\n");
+    printf("Hello World CGI! From Tejas Ghodke, WAPH\n");
+    return 0;
+  }</code></pre>
+              <img src="images/browser_helloworld_cgi.png" alt="CGI Hello World Output" class="img-fluid rounded shadow mb-3" />
+              <li>Created a dynamic HTML-generating CGI script with embedded course/student metadata</li>
+              <li>Built a simple <strong>PHP application</strong> to echo user input and display server configuration</li>
+              <pre><code>&lt;?php
+  echo "You entered: " . $_REQUEST["data"];
+  ?&gt;</code></pre>
+              <img src="images/browser_echo_php.png" alt="PHP Echo Output Screenshot" class="img-fluid rounded shadow mb-3" />
+              <li>Demonstrated and analyzed <strong>HTTP GET vs POST methods</strong> using <code>curl</code> and browser testing</li>
+              <pre><code>curl -X POST http://localhost/echo.php -d "data=Tejas"</code></pre>
+              <li>Applied concepts of the client-server model, MIME headers, input handling, and basic web security</li>
+            </ul>
+            <div class="alert alert-info mt-3">
+              <strong>What I Learned:</strong> Lab 1 deepened my understanding of how the web works at the protocol level. I learned how HTTP requests and responses are structured, how web servers interpret them, and how to analyze network traffic using tools like Wireshark and Telnet. Additionally, I gained hands-on experience in developing simple CGI programs in C and PHP. This lab strengthened both my debugging and secure coding skills.
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Lab 2 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingLab2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab2" aria-expanded="false" aria-controls="collapseLab2">
-              Lab 2: Front-end Web Development
-            </button>
-          </h2>
-          <div id="collapseLab2" class="accordion-collapse collapse" aria-labelledby="headingLab2" data-bs-parent="#labsAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Created a form in raw HTML to submit user input to a PHP echo handler via GET</li>
-                <img src="images/task1a_1.png" alt="Lab 2 HTML Form Screenshot" class="img-fluid rounded shadow mb-3" />
-                <li>Added JavaScript for click-based date display, real-time clocks, and input key logging</li>
-                <pre><code>// Real-time digital clock
-    setInterval(() => {
-      const now = new Date();
-      document.getElementById("digit-clock").innerHTML = now.toLocaleTimeString();
-    }, 1000);</code></pre>
-                <li>Integrated a local JS file to show/hide email address with toggle behavior</li>
-                <li>Loaded and rendered a functional analog clock using an external JS library and canvas</li>
-                <img src="images/task1b.png" alt="Analog Clock Screenshot" class="img-fluid rounded shadow mb-3" />
-                <li>Implemented raw AJAX requests using <code>XMLHttpRequest</code> to send and display input asynchronously</li>
-                <pre><code>function getEcho() {
-      const input = document.getElementById("ajax-input").value;
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-          document.getElementById("ajax-response").innerHTML = this.responseText;
-        }
-      };
-      xhttp.open("GET", "echo.php?data=" + encodeURIComponent(input), true);
-      xhttp.send();
-    }</code></pre>
-                <img src="images/task2a_2.png" alt="AJAX Response Screenshot" class="img-fluid rounded shadow mb-3" />
-                <li>Applied inline, internal, and external CSS to style content and buttons consistently</li>
-                <li>Used jQuery to simplify AJAX GET and POST requests</li>
-                <pre><code>// jQuery POST request
-    $.post("echo.php", { data: input }, function(data) {
-      $("#jquery-response").html("Server says:<br>You entered: " + data);
-    });</code></pre>
-                <li>Fetched a random programming joke using <strong>JokeAPI</strong></li>
-                <li>Used <strong>Agify.io</strong> Web API to predict age from user input</li>
-                <img src="images/task2d_3.png" alt="Agify API Response Screenshot" class="img-fluid rounded shadow mb-3" />
-              </ul>
-              <div class="alert alert-info mt-3">
-                <strong>What I Learned:</strong> Lab 2 gave me hands-on experience building dynamic, interactive web pages. I strengthened my understanding of form handling, DOM manipulation, and asynchronous data exchange using AJAX and jQuery. I also explored the integration of public APIs and enhanced the user interface using multiple layers of CSS. This lab elevated my front-end development skills with real-world, portfolio-ready features.
-              </div>
+      <!-- Lab 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingLab2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab2" aria-expanded="false" aria-controls="collapseLab2">
+            Lab 2: Front-end Web Development
+          </button>
+        </h2>
+        <div id="collapseLab2" class="accordion-collapse collapse" aria-labelledby="headingLab2" data-bs-parent="#labsAccordion">
+          <div class="accordion-body">
+            <p>
+              In Lab 2, I created and deployed a full HTML page showcasing form handling, JavaScript interactivity, AJAX, jQuery, and public API integrations. I explored different types of styling methods (inline, internal, and external), implemented a digital and analog clock, and added dynamic behavior to enhance user interaction.
+            </p>
+            <ul>
+              <li>Created a form in raw HTML to submit user input to a PHP echo handler via GET</li>
+              <img src="images/task1a_1.png" alt="Lab 2 HTML Form Screenshot" class="img-fluid rounded shadow mb-3" />
+              <li>Added JavaScript for click-based date display, real-time clocks, and input key logging</li>
+              <pre><code>// Real-time digital clock
+  setInterval(() => {
+    const now = new Date();
+    document.getElementById("digit-clock").innerHTML = now.toLocaleTimeString();
+  }, 1000);</code></pre>
+              <li>Integrated a local JS file to show/hide email address with toggle behavior</li>
+              <li>Loaded and rendered a functional analog clock using an external JS library and canvas</li>
+              <img src="images/task1b.png" alt="Analog Clock Screenshot" class="img-fluid rounded shadow mb-3" />
+              <li>Implemented raw AJAX requests using <code>XMLHttpRequest</code> to send and display input asynchronously</li>
+              <pre><code>function getEcho() {
+    const input = document.getElementById("ajax-input").value;
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        document.getElementById("ajax-response").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "echo.php?data=" + encodeURIComponent(input), true);
+    xhttp.send();
+  }</code></pre>
+              <img src="images/task2a_2.png" alt="AJAX Response Screenshot" class="img-fluid rounded shadow mb-3" />
+              <li>Applied inline, internal, and external CSS to style content and buttons consistently</li>
+              <li>Used jQuery to simplify AJAX GET and POST requests</li>
+              <pre><code>// jQuery POST request
+  $.post("echo.php", { data: input }, function(data) {
+    $("#jquery-response").html("Server says:<br>You entered: " + data);
+  });</code></pre>
+              <li>Fetched a random programming joke using <strong>JokeAPI</strong></li>
+              <li>Used <strong>Agify.io</strong> Web API to predict age from user input</li>
+              <img src="images/task2d_3.png" alt="Agify API Response Screenshot" class="img-fluid rounded shadow mb-3" />
+            </ul>
+            <div class="alert alert-info mt-3">
+              <strong>What I Learned:</strong> Lab 2 gave me hands-on experience building dynamic, interactive web pages. I strengthened my understanding of form handling, DOM manipulation, and asynchronous data exchange using AJAX and jQuery. I also explored the integration of public APIs and enhanced the user interface using multiple layers of CSS. This lab elevated my front-end development skills with real-world, portfolio-ready features.
             </div>
           </div>
         </div>
+      </div>
 
-      </div> <!-- End accordion -->
-    </section>
-
+    </div> <!-- End accordion -->
+  </section>
 
     <!-- Hackathons Section -->
     <section id="hackathons" class="mb-5">
