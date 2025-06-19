@@ -59,7 +59,7 @@
 
     <!-- Overview Section -->
     <section id="overview" class="mb-5">
-      <h3 class="text-info">Course Overview</h3>
+      <h2 class="text-info">Course Overview</h3>
       <p class="text-light" id="course-overview-text">
         In the Web Application Programming and Hacking course, I gained hands-on experience in full-stack web development and cybersecurity principles. Through two foundational labs, I developed core web skills such as HTML, CSS, JavaScript, PHP scripting, and server-side programming. These labs focused on real-world application logic and emphasized understanding web security and backend functionality.
 
@@ -85,37 +85,101 @@
 
     <!-- Labs Section -->
     <section id="labs" class="mb-5">
-      <h3 class="text-info">Labs</h3>
+      <h2 class="text-info">Labs</h3>
       <p class="text-light">
         The labs in this course are hands-on exercises designed to reinforce core concepts in web development and security. These are not public and have been submitted privately to the instructor.
       </p>
+
       <!-- Lab 0 -->
-      <section class="mb-4">
-        <h4 class="text-info">Lab 0: Environment Setup & Version Control</h4>
+      <section class="mb-5">
+        <h3 class="text-info">Lab 0: Environment Setup & Version Control</h3>
         <p>
           This foundational lab introduced the tools and environment required for web application development and security testing. I set up a Linux-based virtual development environment, installed critical software packages, and configured Git for version control. Additionally, I tested the Apache web server and used SSH to securely push code to GitHub.
         </p>
-        
+
         <ul>
-          <li>Installed Ubuntu 22.04 as a virtual machine with 6 cores, 16 GB RAM, and 50 GB storage using VirtualBox</li>
+          <li>Installed Ubuntu 22.04 as a virtual machine with 4 cores, 8 GB RAM, and 50 GB storage using VirtualBox</li>
           <li>Installed essential packages: <code>Apache2</code>, <code>Git</code>, <code>Curl</code>, <code>OpenSSH Server</code>, and <code>Pandoc</code></li>
+
+          <!-- Screenshot of Apache verification -->
           <li>Verified Apache setup by accessing the default webpage from host and VM IP addresses</li>
+          <img src="images/Apache2Host.png" alt="Apache Default Page Screenshot" class="img-fluid rounded shadow mb-3" />
+
           <li>Cloned the course repository and created a private GitHub repo for lab submissions</li>
+
+          <!-- Code snippet: SSH keygen and Git init -->
           <li>Generated and registered an SSH key for secure Git operations</li>
+          <pre><code>ssh-keygen -t rsa -b 4096 -C "ghodketg@mail.uc.edu"</code></pre>
+
           <li>Used Markdown and <code>Pandoc</code> to generate a formatted PDF report from <code>README.md</code></li>
+          <pre><code>pandoc README.md -o ghodketg-waph-lab0.pdf</code></pre>
         </ul>
+
+        <div class="alert alert-info mt-3">
+          <strong>What I Learned:</strong> Through Lab 0, I learned how to create and configure a virtual Linux development environment, including essential tools like Git, Apache, SSH, and Pandoc. I gained practical experience setting up and testing a local web server, generating secure SSH keys, and using GitHub for version control. This setup now serves as the foundational environment for all future labs and projects in this course.
+        </div>
       </section>
+
+      <!-- Lab 1 -->
+      <section class="mb-5">
+        <h3 class="text-info">Lab 1: Foundations of the Web</h3>
+        <p>
+          In this lab, I explored how the web functions at both the protocol and programming levels. Through a combination of network analysis and basic back-end scripting, I gained hands-on experience with the HTTP protocol, request/response mechanisms, and simple web server-side development using C and PHP.
+        </p>
+
+        <ul>
+          <li>Used <strong>Wireshark</strong> to capture and analyze HTTP GET and response messages</li>
+          <img src="images/http_get_response.png" alt="Wireshark HTTP Capture" class="img-fluid rounded shadow mb-3" />
+
+          <li>Sent manual HTTP requests to a server using <strong>Telnet</strong> and compared the structure with browser-based requests</li>
+          <pre><code>telnet example.com 80
+      GET / HTTP/1.1
+      Host: example.com
+
+      </code></pre>
+
+          <li>Developed a basic <strong>CGI "Hello World"</strong> app in C, hosted via Apache</li>
+          <pre><code>
+            #include &lt;stdio.h&gt;
+            int main(void) {
+              printf("Content-Type: text/plain; charset=utf-8\n\n");
+              printf("Hello World CGI! From Tejas Ghodke, WAPH\n");
+              return 0;
+            }
+          </code></pre>
+          <img src="images/browser_helloworld_cgi.png" alt="CGI Hello World Output" class="img-fluid rounded shadow mb-3" />
+
+          <li>Created a dynamic HTML-generating CGI script with embedded course/student metadata</li>
+          <li>Built a simple <strong>PHP application</strong> to echo user input and display server configuration</li>
+          <pre><code>
+            &lt;?php
+            echo "You entered: " . $_REQUEST["data"];
+            ?&gt;
+          </code></pre>
+          <img src="images/browser_echo_php.png" alt="PHP Echo Output Screenshot" class="img-fluid rounded shadow mb-3" />
+
+          <li>Demonstrated and analyzed <strong>HTTP GET vs POST methods</strong> using <code>curl</code> and browser testing</li>
+          <pre><code>curl -X POST http://localhost/echo.php -d "data=Tejas"</code></pre>
+
+          <li>Applied concepts of the client-server model, MIME headers, input handling, and basic web security</li>
+        </ul>
+
+        <div class="alert alert-info mt-3">
+          <strong>What I Learned:</strong> Lab 1 deepened my understanding of how the web works at the protocol level. I learned how HTTP requests and responses are structured, how web servers interpret them, and how to analyze network traffic using tools like Wireshark and Telnet. Additionally, I gained hands-on experience in developing simple CGI programs in C and PHP. This lab strengthened both my debugging and secure coding skills.
+        </div>
+      </section>
+
     </section>
 
     <!-- Hackathons Section -->
     <section id="hackathons" class="mb-5">
-      <h3 class="text-info">Hackathons</h3>
+      <h2 class="text-info">Hackathons</h3>
       <p class="text-light">Hackathons are short, time-boxed collaborative challenges that simulate real-world cyber attack and defense scenarios.</p>
     </section>
 
     <!-- Individual Projects Section -->
     <section id="projects" class="mb-5">
-      <h3 class="text-info">Individual Projects</h3>
+      <h2 class="text-info">Individual Projects</h3>
       <p class="text-light">These projects showcase applied learning in full-stack development, JavaScript integration, and API security practices.</p>
       <p class="text-light">🔗 <a href="https://github.com/ghodketejas/ghodketejas.github.io" target="_blank">View GitHub Source Code</a></p>
     </section>
