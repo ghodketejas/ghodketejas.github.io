@@ -305,3 +305,15 @@ html {
 .alert-info strong {
   color: #004085; /* Deep blue */
 }
+
+.hint-note {
+  font-style: italic;
+  color: #b0e0ff; /* soft sky-blue for better contrast */
+}
+
+.title-subtext {
+  color: #88d4f7;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+}
