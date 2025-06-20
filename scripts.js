@@ -83,4 +83,99 @@ document.addEventListener('DOMContentLoaded', function () {
       menu.style.cursor = 'move';
     });
   }
+
+    // --- Email Show/Hide Toggle ---
+  const emailBtn = document.getElementById("toggle-email");
+  if (emailBtn) {
+    emailBtn.addEventListener("click", () => {
+      const email = document.getElementById("email");
+      const btn = document.getElementById("toggle-email");
+      if (email.style.display === "none") {
+        email.style.display = "block";
+        btn.textContent = "Hide Email";
+      } else {
+        email.style.display = "none";
+        btn.textContent = "Show Email";
+      }
+    });
+  }
+
+  // --- Background Theme Toggle ---
+  const bgBtn = document.getElementById("toggle-bg");
+  if (bgBtn) {
+    bgBtn.addEventListener("click", () => {
+      document.body.classList.toggle("alt-theme");
+    });
+  }
 });
+
+// Digital Clock
+setInterval(() => {
+  const now = new Date();
+  document.getElementById("digit-clock").textContent = now.toLocaleTimeString();
+}, 1000);
+
+// Analog Clock with Canvas
+function drawAnalogClock() {
+  const canvas = document.getElementById("analog-clock");
+  const ctx = canvas.getContext("2d");
+  const radius = canvas.height / 2;
+  ctx.translate(radius, radius);
+
+  function drawClock() {
+    const now = new Date();
+    ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
+
+    // Clock face
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
+    ctx.fillStyle = "#222";
+    ctx.fill();
+    ctx.strokeStyle = "#0dcaf0";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    // Hands
+    const sec = now.getSeconds();
+    const min = now.getMinutes();
+    const hr = now.getHours();
+    const secAngle = sec * 6 * Math.PI / 180;
+    const minAngle = (min + sec / 60) * 6 * Math.PI / 180;
+    const hrAngle = (hr % 12 + min / 60) * 30 * Math.PI / 180;
+
+    function drawHand(angle, length, width) {
+      ctx.beginPath();
+      ctx.lineWidth = width;
+      ctx.strokeStyle = "#0dcaf0";
+      ctx.moveTo(0, 0);
+      ctx.rotate(angle);
+      ctx.lineTo(0, -length);
+      ctx.stroke();
+      ctx.rotate(-angle);
+    }
+
+    drawHand(hrAngle, radius * 0.5, 6);
+    drawHand(minAngle, radius * 0.75, 4);
+    drawHand(secAngle, radius * 0.85, 2);
+  }
+
+  setInterval(drawClock, 1000);
+}
+drawAnalogClock();
+
+function fetchJoke() {
+  fetch("https://v2.jokeapi.dev/joke/Any?format=txt")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("joke-box").textContent = data;
+    });
+}
+fetchJoke();
+setInterval(fetchJoke, 60000);
+
+fetch("https://xkcd.vercel.app/?comic=latest")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("xkcd-img").src = data.img;
+    document.getElementById("xkcd-title").textContent = data.title;
+  });

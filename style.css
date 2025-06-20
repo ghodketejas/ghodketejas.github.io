@@ -317,3 +317,8 @@ html {
   font-style: italic;
   font-weight: 400;
 }
+
+.alt-theme {
+  background-color: #1a1a2e !important;
+  color: #f0f0f0;
+}
