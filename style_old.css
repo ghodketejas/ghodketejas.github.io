@@ -195,22 +195,27 @@ a:hover {
   transition: box-shadow 0.2s ease;
   will-change: transform;
 }
+
 #hot-menu:hover {
   box-shadow: 0 0 10px #0dcaf0;
 }
+
 #hot-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 #hot-menu ul li {
   margin-bottom: 10px;
 }
+
 #hot-menu a {
   color: #0dcaf0;
   text-decoration: none;
   font-weight: 500;
 }
+
 #hot-menu a:hover {
   text-decoration: underline;
 }
@@ -248,6 +253,7 @@ html {
   background-color: transparent;
   margin-bottom: 12px;
 }
+
 .accordion-button {
   background-color: #121212;
   color: #0dcaf0;
@@ -257,14 +263,17 @@ html {
   box-shadow: none;
   border: none;
 }
+
 .accordion-button::after {
-  filter: brightness(0.6);
+  filter: brightness(0.6); /* makes the arrow more subtle */
 }
+
 .accordion-button:not(.collapsed) {
   background-color: #0a0a0a;
   color: #0dcaf0;
   box-shadow: none;
 }
+
 .accordion-body {
   background-color: #1b1b1b;
   color: #e8e8e8;
@@ -274,31 +283,34 @@ html {
   border-top: none;
 }
 
-/* Code inside accordion */
+/* Code readability inside accordion */
 .accordion-body code {
-  color: #ff66cc;
+  color: #ff66cc; /* vibrant pink */
   font-weight: 500;
 }
+
+/* Restore strong/ul/p clarity */
 .accordion-body p,
 .accordion-body ul,
 .accordion-body li,
 .accordion-body strong {
   color: #e0e0e0;
 }
+
+/* Optional: Lighten links inside accordion too */
 .accordion-body a {
   color: #4dd0e1;
 }
 
-/* Alert Styling */
 .alert-info strong {
-  color: #004085;
+  color: #004085; /* Deep blue */
 }
 
-/* Custom Notes & Highlights */
 .hint-note {
   font-style: italic;
-  color: #b0e0ff;
+  color: #b0e0ff; /* soft sky-blue for better contrast */
 }
+
 .title-subtext {
   color: #88d4f7;
   font-size: 1.1rem;
@@ -306,7 +318,6 @@ html {
   font-weight: 400;
 }
 
-/* Theme Switch */
 .alt-theme {
   background-color: #1a1a2e !important;
   color: #f0f0f0;
