@@ -219,15 +219,106 @@
           </div>
         </div>
       </div>
-
     </div> <!-- End accordion -->
+  
+  <!-- Placeholder for lab3 -->
+
   </section>
 
     <!-- Hackathons Section -->
     <section id="hackathons" class="mb-5">
-      <h2 class="text-info">Hackathons</h3>
-      <p class="text-light">Hackathons are short, time-boxed collaborative challenges that simulate real-world cyber attack and defense scenarios.</p>
-    </section>
+  <h2 class="text-info">Hackathons</h2>
+  <p class="text-light">
+    Hackathons in this course are short, time-boxed challenges designed to test students’ ability to identify and exploit vulnerabilities in real-world scenarios—and then apply secure coding principles to defend against those same attacks. They simulate adversarial environments while emphasizing best practices for modern web security.
+  </p>
+
+  <div class="accordion" id="hackathonAccordion">
+
+    <!-- Hackathon 1 -->
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingHack1">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHack1" aria-expanded="true" aria-controls="collapseHack1">
+        Hackathon 1: Cross-site Scripting (XSS) Attacks & Defenses
+      </button>
+    </h2>
+    <div id="collapseHack1" class="accordion-collapse collapse show" aria-labelledby="headingHack1" data-bs-parent="#hackathonAccordion">
+      <div class="accordion-body">
+
+        <p>
+          In Hackathon 1, I explored reflected Cross-site Scripting (XSS) vulnerabilities across multiple web application levels. The challenge was split into two main tasks: identifying and successfully exploiting client-side injection points (Task 1), and redesigning vulnerable code to defend against those same threats (Task 2). I worked through six progressively harder attack levels, followed by hands-on defensive implementations in both PHP and JavaScript.
+        </p>
+
+        <h4 class="text-light">Task 1: XSS Attacks</h4>
+        <ul>
+          <li>
+            <strong>Level 0–2:</strong> Discovered basic XSS flaws where input was echoed without sanitization (via GET and POST methods). Crafted simple <code>&lt;script&gt;</code> injection payloads like:
+            <pre><code>&lt;script&gt;alert('Tejas Ghodke')&lt;/script&gt;</code></pre>
+            <img src="images/level0_2.png" alt="Alert box triggered on level 0" class="img-fluid rounded shadow my-2" />
+          </li>
+
+          <li>
+            <strong>Level 3:</strong> Bypassed <code>&lt;script&gt;</code> filtering using:
+            <pre><code>&lt;iframe src="javascript:alert('Tejas Ghodke')"&gt;</code></pre>
+            <img src="images/level3_2.png" alt="Bypassing script tag with iframe" class="img-fluid rounded shadow my-2" />
+          </li>
+
+          <li>
+            <strong>Level 4:</strong> Circumvented blacklist filters (blocking "script"/"javascript") by leveraging non-keyword tags and event handlers:
+            <pre><code>&lt;body onload="alert('Tejas Ghodke')"&gt;</code></pre>
+            <img src="images/level4.png" alt="XSS triggered with body onload" class="img-fluid rounded shadow my-2" />
+          </li>
+
+          <li>
+            <strong>Level 5:</strong> Bypassed "alert" keyword filtering using character encoding:
+            <pre><code>&lt;body onload="&#x61;&#x6c;&#x65;&#x72;&#x74;('Tejas Ghodke')"&gt;</code></pre>
+            <img src="images/level5.png" alt="Hex-encoded alert bypass" class="img-fluid rounded shadow my-2" />
+          </li>
+
+          <li>
+            <strong>Level 6:</strong> Achieved attribute-based XSS by injecting <code>onmouseover</code> directly into an HTML element:
+            <pre><code>" onmouseover="alert('Tejas Ghodke')</code></pre>
+            <img src="images/level6.png" alt="Attribute-based injection success" class="img-fluid rounded shadow my-2" />
+          </li>
+        </ul>
+
+        <h4 class="text-light mt-4">Task 2: XSS Defenses</h4>
+        <ul>
+          <li>
+            <strong>PHP Fix:</strong> Rewrote vulnerable <code>echo.php</code> to use <code>htmlspecialchars()</code>:
+            <pre><code>&lt;?php
+  echo "You entered: " . htmlspecialchars($_REQUEST["data"], ENT_QUOTES, 'UTF-8');
+  ?&gt;</code></pre>
+            <img src="images/task2a.png" alt="PHP Defense Diff Screenshot" class="img-fluid rounded shadow my-2" />
+          </li>
+
+          <li>
+            <strong>JavaScript Fix:</strong> Replaced unsafe <code>innerHTML</code> with <code>textContent</code>:
+            <pre><code>// Before
+  ajaxDiv.innerHTML = "Server says: " + this.responseText;
+
+  // After
+  ajaxDiv.textContent = "Server says: " + this.responseText;
+            </code></pre>
+            <img src="images/task2b.png" alt="JS Fix - Switching innerHTML to textContent" class="img-fluid rounded shadow my-2" />
+          </li>
+        </ul>
+
+        <div class="alert alert-info mt-3">
+          <strong>What I Learned:</strong> This hackathon helped me think like both an attacker and a secure developer. I learned how seemingly small flaws like unescaped inputs can be weaponized into powerful XSS vectors—whether injected via script tags, iframe abuse, or event attributes. I also implemented defenses using <code>htmlspecialchars()</code> in PHP and <code>textContent</code> in JavaScript to prevent DOM-based injection. It reinforced how real-world web apps can be secured through layered validation and output encoding.
+        </div>
+
+        <p class="fst-italic text-muted mt-3">
+          Optional bonus: I also recorded a full walkthrough video as extra credit. You can watch it
+          <a href="https://uc.mediaspace.kaltura.com/media/Hackathon+1+-+Extra+Points+Video/1_7yuf12it" target="_blank">here</a>.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder for hackathon 2 -->
+
+  </section>
 
     <!-- Individual Projects Section -->
     <section id="projects" class="mb-5">

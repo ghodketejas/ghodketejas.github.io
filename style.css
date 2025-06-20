@@ -301,3 +301,7 @@ html {
 .accordion-body a {
   color: #4dd0e1;
 }
+
+.alert-info strong {
+  color: #004085; /* Deep blue */
+}
