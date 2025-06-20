@@ -60,27 +60,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const menu = document.getElementById('hot-menu');
   if (menu) {
     let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
+    let startX, startY, initialX = 0, initialY = 0;
+
+    menu.style.position = 'fixed'; // Keep it anchored to viewport
 
     menu.addEventListener('mousedown', function (e) {
       isDragging = true;
-      offsetX = e.clientX - menu.offsetLeft;
-      offsetY = e.clientY - menu.offsetTop;
-      menu.style.position = 'absolute';
-      menu.style.zIndex = 9999;
-      menu.style.cursor = 'move';
+      startX = e.clientX - initialX;
+      startY = e.clientY - initialY;
+      menu.style.cursor = 'grabbing';
     });
 
     document.addEventListener('mousemove', function (e) {
-      if (isDragging) {
-        menu.style.left = e.clientX - offsetX + 'px';
-        menu.style.top = e.clientY - offsetY + 'px';
-      }
+      if (!isDragging) return;
+      initialX = e.clientX - startX;
+      initialY = e.clientY - startY;
+      menu.style.transform = `translate(${initialX}px, ${initialY}px)`;
     });
 
     document.addEventListener('mouseup', function () {
       isDragging = false;
+      menu.style.cursor = 'move';
     });
   }
 });
