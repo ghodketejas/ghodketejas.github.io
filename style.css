@@ -321,12 +321,12 @@ html {
   font-weight: bold;
   display: inline-block;
   font-size: 2.5rem;
-  width: 26ch; /* ⬅️ Fix: approximate number of characters in your sentence */
+  width: 24ch; /* ⬅️ Fix: approximate number of characters in your sentence */
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 23ch }
+  to { width: 24ch }
 }
 
 @keyframes blink {
