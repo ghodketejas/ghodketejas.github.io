@@ -326,7 +326,7 @@ html {
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 24ch }
+  to { width: 23ch }
 }
 
 @keyframes blink {
