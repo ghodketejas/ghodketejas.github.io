@@ -222,7 +222,37 @@
       </div>
     </div> <!-- End accordion -->
   
-  <!-- Placeholder for lab3 -->
+  <!-- Lab 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingLab3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab3" aria-expanded="false" aria-controls="collapseLab3">
+        Lab 3: Secure Web Application Development with PHP & MySQL
+      </button>
+    </h2>
+    <div id="collapseLab3" class="accordion-collapse collapse" aria-labelledby="headingLab3" data-bs-parent="#labsAccordion">
+      <div class="accordion-body">
+        <p>
+          In Lab 3, I developed a secure login system using PHP and MySQL. The lab was divided into parts, with Part C intentionally left insecure to demonstrate SQL injection vulnerability. In Part D, I defended against those attacks using parameterized queries (prepared statements). I also explored session management and secure cookie handling.
+        </p>
+        <ul>
+          <li>Created a login form that sends data to <code>index.php</code> using POST</li>
+          <li>Connected to MySQL using <code>mysqli</code> and executed raw SQL in Part C</li>
+          <pre><code>$sql = "SELECT * FROM Users WHERE username='$username' AND password='$password'";</code></pre>
+          <li>Demonstrated XSS injection using JavaScript payloads inside input</li>
+          <li>Implemented secure practices in Part D using prepared statements</li>
+          <pre><code>$stmt = $conn->prepare("SELECT * FROM Users WHERE username=? AND password=?");</code></pre>
+          <li>Improved login feedback with cookie-based welcome messages and session state</li>
+          <img src="images/lab3_sql_injection.png" alt="SQL Injection Screenshot" class="img-fluid rounded shadow my-3" />
+          <img src="images/lab3_defense_success.png" alt="Defense Screenshot" class="img-fluid rounded shadow my-3" />
+        </ul>
+        <div class="alert alert-info mt-3">
+          <strong>What I Learned:</strong> Lab 3 helped me understand the dangers of insecure database queries and how to mitigate them using prepared statements. I practiced user authentication, cookie/session management, and secure input/output handling. This lab emphasized real-world backend security principles essential for any web developer.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLACEHOLDER for Lab 4 -->
 
   </section>
 
