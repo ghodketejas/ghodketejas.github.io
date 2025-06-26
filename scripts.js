@@ -179,3 +179,23 @@ fetch("https://xkcd.vercel.app/?comic=latest")
     document.getElementById("xkcd-img").src = data.img;
     document.getElementById("xkcd-title").textContent = data.title;
   });
+
+async function sendChat() {
+  const input = document.getElementById("chat-input");
+  const log = document.getElementById("chat-log");
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+
+  log.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+  input.value = "";
+
+  const res = await fetch("https://ghodketejas-github-io.vercel.app/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message: userMsg })
+  });
+
+  const data = await res.json();
+  log.innerHTML += `<div><strong>TejasBot:</strong> ${data.reply}</div>`;
+  log.scrollTop = log.scrollHeight;
+}
