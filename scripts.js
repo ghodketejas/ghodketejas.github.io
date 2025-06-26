@@ -189,13 +189,28 @@ async function sendChat() {
   log.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
   input.value = "";
 
+  const botTyping = document.createElement("div");
+  botTyping.id = "typing";
+  botTyping.innerHTML = `<em>TejasBot is typing...</em>`;
+  log.appendChild(botTyping);
+  log.scrollTop = log.scrollHeight;
+
   const res = await fetch("https://ghodketejas-github-io.vercel.app/api/chat", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ message: userMsg })
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: userMsg })
   });
 
   const data = await res.json();
-  log.innerHTML += `<div><strong>TejasBot:</strong> ${data.reply}</div>`;
+  botTyping.remove();
+
+  const botResponse = document.createElement("div");
+  botResponse.innerHTML = `<strong>TejasBot:</strong> ${data.reply}`;
+  log.appendChild(botResponse);
   log.scrollTop = log.scrollHeight;
+}
+
+function loadSample(text) {
+  document.getElementById("chat-input").value = text;
+  sendChat();
 }
