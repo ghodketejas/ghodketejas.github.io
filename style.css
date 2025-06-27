@@ -335,18 +335,19 @@ html {
 
 /* Chatbot */
 #chat-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
-  padding: 24px;
-  max-width: 680px;
-  margin: 60px auto;
-  box-shadow: 0 0 25px rgba(13, 202, 240, 0.25);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   transition: box-shadow 0.3s ease;
 }
 
 #chat-container:hover {
-  box-shadow: 0 0 40px rgba(13, 202, 240, 0.5);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
 #chat-log {
@@ -396,4 +397,34 @@ button.btn-outline-info:hover {
 
 .hint-note + button {
   margin-top: 6px;
+}
+
+.hint-container {
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  overflow: hidden;
+}
+
+#chat-input:focus + button + .hint-container,
+#chat-input:hover + button + .hint-container {
+  opacity: 1;
+  max-height: 150px;
+}
+
+.hint-buttons button {
+  margin: 5px;
+  padding: 6px 12px;
+  border: 1px solid #00f2ff;
+  background: transparent;
+  color: #00f2ff;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.hint-buttons button:hover {
+  background-color: #00f2ff;
+  color: black;
 }
