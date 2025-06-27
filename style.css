@@ -80,276 +80,21 @@ body::before {
   color: #0dcaf0;
 }
 
-/* Resume Header */
-header {
-  background-color: #1c1c1c;
-  text-align: center;
-  padding: 30px 20px 20px;
-  color: #ccc;
-}
-.resume-title {
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-.contact-line {
-  font-size: 14px;
-  color: #0dcaf0;
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-.contact-links a {
-  font-size: 14px;
-  color: #0dcaf0;
-  margin: 0 6px;
-  text-decoration: none;
-}
-.contact-links a:hover {
-  text-decoration: underline;
-}
-.separator {
-  color: #ffffff;
-  padding: 0 5px;
-}
-
-/* Resume Content */
-main.resume-content {
-  max-width: 850px;
-  margin: auto;
-  padding: 100px 20px 60px;
-}
-
-/* Headings */
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0dcaf0;
-  border-bottom: 2px solid #0dcaf0;
-  padding-bottom: 6px;
-  margin-top: 40px;
-}
-h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-/* Typography */
-p, li {
-  font-size: 15px;
-  line-height: 1.7;
-}
-ul {
-  padding-left: 20px;
-}
-
-/* Footer */
-footer {
-  background-color: #1c1c1c;
-  text-align: center;
-  margin-top: 60px;
-  color: #888;
-  font-size: 14px;
-  padding-bottom: 20px;
-}
-
-/* Global Links */
-a {
-  color: #0dcaf0;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Button */
-.btn-outline-info {
-  font-weight: 500;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-/* Visit Message */
-#visit-message {
-  display: none;
-  padding: 50px 50px 10px 50px;
-  animation: fadeIn 0.6s ease-in-out;
-  margin: 80px auto 20px auto;
-}
-
-/* Hot Menu */
-#hot-menu {
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  background-color: rgba(13, 13, 13, 0.9);
-  border: 1px solid #444;
-  padding: 15px 20px;
-  border-radius: 8px;
-  z-index: 1000;
-  cursor: move;
-  transition: box-shadow 0.2s ease;
-  will-change: transform;
-}
-#hot-menu:hover {
-  box-shadow: 0 0 10px #0dcaf0;
-}
-#hot-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#hot-menu ul li {
-  margin-bottom: 10px;
-}
-#hot-menu a {
-  color: #0dcaf0;
-  text-decoration: none;
-  font-weight: 500;
-}
-#hot-menu a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile Responsive Hot Menu */
-@media (max-width: 768px) {
-  #hot-menu {
-    position: static;
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  #hot-menu ul {
-    display: flex;
-    flex-direction: row;
-  }
-  #hot-menu ul li {
-    margin: 0;
-  }
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 60px;
-}
-
-/* Bootstrap Accordion Override */
-.accordion-item {
-  border: none;
-  background-color: transparent;
-  margin-bottom: 12px;
-}
-.accordion-button {
-  background-color: #121212;
-  color: #0dcaf0;
-  font-weight: 600;
-  padding: 12px 16px;
-  border-radius: 6px;
-  box-shadow: none;
-  border: none;
-}
-.accordion-button::after {
-  filter: brightness(0.6);
-}
-.accordion-button:not(.collapsed) {
-  background-color: #0a0a0a;
-  color: #0dcaf0;
-  box-shadow: none;
-}
-.accordion-body {
-  background-color: #1b1b1b;
-  color: #e8e8e8;
-  padding: 20px;
-  border-radius: 0 0 6px 6px;
-  border: 1px solid #0dcaf0;
-  border-top: none;
-}
-
-/* Code inside accordion */
-.accordion-body code {
-  color: #ff66cc;
-  font-weight: 500;
-}
-.accordion-body p,
-.accordion-body ul,
-.accordion-body li,
-.accordion-body strong {
-  color: #e0e0e0;
-}
-.accordion-body a {
-  color: #4dd0e1;
-}
-
-/* Alert Styling */
-.alert-info strong {
-  color: #004085;
-}
-
-/* Custom Notes & Highlights */
-.hint-note {
-  font-style: italic;
-  color: #b0e0ff;
-}
-.title-subtext {
-  color: #88d4f7;
-  font-size: 1.1rem;
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Theme Switch */
-.alt-theme {
-  background-color: #1a1a2e !important;
-  color: #f0f0f0;
-}
-
-.typewriter-text {
-  overflow: hidden;
-  border-right: 2px solid #0dcaf0;
-  white-space: nowrap;
-  letter-spacing: 1px;
-  animation: typing 2.5s steps(30, end), blink 0.75s step-end infinite;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 2.5rem;
-  width: 21ch; 
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 21ch }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-/* Chatbot */
+/* Chatbot Container */
 #chat-container {
   max-width: 700px;
   margin: 50px auto;
   padding: 25px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
   transition: box-shadow 0.3s ease;
 }
-
 #chat-container:hover {
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
 }
-
 #chat-log {
   max-height: 300px;
   overflow-y: auto;
@@ -357,61 +102,54 @@ html {
   margin-bottom: 16px;
   font-size: 0.95rem;
 }
-
 #chat-log div strong {
   color: #0dcaf0;
 }
-
 #chat-input {
   background-color: rgba(30, 30, 30, 0.8);
   color: #fff;
   border: 1px solid #0dcaf0;
   transition: all 0.2s ease-in-out;
 }
-
 #chat-input:focus {
   border-color: #17d4ff;
   box-shadow: 0 0 6px #0dcaf0;
 }
-
 #chat-input::placeholder {
   color: #bbb;
 }
-
 button.btn-outline-info {
   width: 100%;
   margin-top: 10px;
   transition: transform 0.2s ease, background-color 0.3s;
 }
-
 button.btn-outline-info:hover {
   background-color: #0dcaf0;
   color: #000;
   transform: scale(1.02);
 }
 
-.hint-note {
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
-.hint-note + button {
-  margin-top: 6px;
-}
-
+/* Hint Buttons Hidden Initially */
 .hint-container {
-  text-align: center;
-  margin-top: 10px;
   opacity: 0;
   max-height: 0;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
   overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  text-align: center;
+  margin-top: 10px;
 }
 
-#chat-input:focus + button + .hint-container,
-#chat-input:hover + button + .hint-container {
+/* Show Hint Buttons When Input is Focused */
+#chat-input:focus ~ .hint-container {
   opacity: 1;
   max-height: 150px;
+}
+
+.hint-note {
+  font-style: italic;
+  color: #b0e0ff;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
 }
 
 .hint-buttons button {
@@ -422,6 +160,7 @@ button.btn-outline-info:hover {
   color: #00f2ff;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .hint-buttons button:hover {
