@@ -335,34 +335,65 @@ html {
 
 /* Chatbot */
 #chat-container {
-  background: rgba(28, 28, 28, 0.7);
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
   padding: 24px;
-  max-width: 600px;
-  margin: 50px auto;
-  box-shadow: 0 0 20px rgba(13, 202, 240, 0.25);
-  backdrop-filter: blur(10px);
+  max-width: 680px;
+  margin: 60px auto;
+  box-shadow: 0 0 25px rgba(13, 202, 240, 0.25);
+  backdrop-filter: blur(12px);
   transition: box-shadow 0.3s ease;
 }
+
 #chat-container:hover {
-  box-shadow: 0 0 30px rgba(13, 202, 240, 0.5);
+  box-shadow: 0 0 40px rgba(13, 202, 240, 0.5);
 }
-#chat-log div {
-  padding: 6px 0;
+
+#chat-log {
+  max-height: 300px;
+  overflow-y: auto;
+  color: #eee;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
 }
-#chat-log strong {
+
+#chat-log div strong {
   color: #0dcaf0;
 }
+
 #chat-input {
-  background-color: #1e1e1e;
-  color: #eee;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #fff;
   border: 1px solid #0dcaf0;
+  transition: all 0.2s ease-in-out;
 }
+
 #chat-input:focus {
   border-color: #17d4ff;
-  box-shadow: 0 0 5px #0dcaf0;
+  box-shadow: 0 0 6px #0dcaf0;
 }
+
+#chat-input::placeholder {
+  color: #bbb;
+}
+
+button.btn-outline-info {
+  width: 100%;
+  margin-top: 10px;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
 button.btn-outline-info:hover {
   background-color: #0dcaf0;
   color: #000;
+  transform: scale(1.02);
+}
+
+.hint-note {
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.hint-note + button {
+  margin-top: 6px;
 }
