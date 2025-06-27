@@ -186,18 +186,19 @@ async function sendChat() {
   const userMsg = input.value.trim();
   if (!userMsg) return;
 
-  // Add user message
-  const userEntry = document.createElement("div");
-  userEntry.innerHTML = `<strong>You:</strong> ${userMsg}`;
-  log.appendChild(userEntry);
+  // User bubble
+  const userBubble = document.createElement("div");
+  userBubble.className = "chat-bubble user";
+  userBubble.innerHTML = `<span>${userMsg}</span>`;
+  log.appendChild(userBubble);
 
   input.value = "";
 
-  // TejasBot typing placeholder
-  const botTyping = document.createElement("div");
-  botTyping.id = "typing";
-  botTyping.innerHTML = `<strong>TejasBot:</strong> <span class="typing-animation">|</span>`;
-  log.appendChild(botTyping);
+  // Typing bubble
+  const typingBubble = document.createElement("div");
+  typingBubble.className = "chat-bubble bot typing";
+  typingBubble.innerHTML = `<span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>`;
+  log.appendChild(typingBubble);
   log.scrollTop = log.scrollHeight;
 
   try {
@@ -206,22 +207,25 @@ async function sendChat() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userMsg })
     });
-    
+
     const data = await res.json();
-    botTyping.remove();
+    typingBubble.remove();
 
-    // Add response with animation on content, not the whole div
-    const botResponse = document.createElement("div");
-    botResponse.innerHTML = `<strong>TejasBot:</strong> <span>${data.reply || 'Something went wrong 😕'}</span>`;
-    log.appendChild(botResponse);
-    log.scrollTop = log.scrollHeight;
+    // Bot response bubble
+    const botBubble = document.createElement("div");
+    botBubble.className = "chat-bubble bot";
+    botBubble.innerHTML = `<span>${data.reply || 'Something went wrong 😬'}</span>`;
+    log.appendChild(botBubble);
 
-  } catch (err) {
-    botTyping.remove();
-    const botError = document.createElement("div");
-    botError.innerHTML = `<strong>TejasBot:</strong> <span>Oops! I'm having trouble replying right now.</span>`;
-    log.appendChild(botError);
+  } catch {
+    typingBubble.remove();
+    const errorBubble = document.createElement("div");
+    errorBubble.className = "chat-bubble bot";
+    errorBubble.innerHTML = `<span>Something went wrong 😬</span>`;
+    log.appendChild(errorBubble);
   }
+
+  log.scrollTop = log.scrollHeight;
 }
 
 function loadSample(text) {
