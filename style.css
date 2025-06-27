@@ -332,3 +332,37 @@ html {
 @keyframes blink {
   50% { border-color: transparent }
 }
+
+/* Chatbot */
+#chat-container {
+  background: rgba(28, 28, 28, 0.7);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 0 20px rgba(13, 202, 240, 0.25);
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease;
+}
+#chat-container:hover {
+  box-shadow: 0 0 30px rgba(13, 202, 240, 0.5);
+}
+#chat-log div {
+  padding: 6px 0;
+}
+#chat-log strong {
+  color: #0dcaf0;
+}
+#chat-input {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 1px solid #0dcaf0;
+}
+#chat-input:focus {
+  border-color: #17d4ff;
+  box-shadow: 0 0 5px #0dcaf0;
+}
+button.btn-outline-info:hover {
+  background-color: #0dcaf0;
+  color: #000;
+}
