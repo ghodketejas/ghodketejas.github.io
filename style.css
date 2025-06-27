@@ -22,7 +22,6 @@ body::before {
   background-repeat: repeat;
   opacity: 0.25;
   z-index: -1;
-  z-index: 0;
 }
 
 /* Navigation */
@@ -336,21 +335,21 @@ html {
 
 /* Chatbot Container */
 #chat-container {
-  max-width: 700px;
+  max-width: 930px;
   margin: 50px auto;
   padding: 25px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: #1a1a1a;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
   transition: box-shadow 0.3s ease;
   position: relative;
   z-index: 1;
 }
+
 #chat-container:hover {
   box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
 }
+
 #chat-log {
   max-height: 300px;
   overflow-y: auto;
@@ -358,27 +357,33 @@ html {
   margin-bottom: 16px;
   font-size: 0.95rem;
 }
+
 #chat-log div strong {
   color: #0dcaf0;
 }
+
 #chat-input {
-  background-color: rgba(30, 30, 30, 0.8);
+  background-color: #121212;
   color: #fff;
   border: 1px solid #0dcaf0;
   transition: all 0.2s ease-in-out;
 }
+
 #chat-input:focus {
   border-color: #17d4ff;
   box-shadow: 0 0 6px #0dcaf0;
 }
+
 #chat-input::placeholder {
   color: #bbb;
 }
+
 button.btn-outline-info {
   width: 100%;
   margin-top: 10px;
   transition: transform 0.2s ease, background-color 0.3s;
 }
+
 button.btn-outline-info:hover {
   background-color: #0dcaf0;
   color: #000;
@@ -422,4 +427,38 @@ button.btn-outline-info:hover {
 .hint-buttons button:hover {
   background-color: #00f2ff;
   color: black;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#chat-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.typing-animation {
+  border-right: 2px solid #0dcaf0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typingEffect 2s steps(30, end), blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typingEffect {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+#chat-input {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#chat-input:hover {
+  box-shadow: 0 0 8px 2px #0dcaf0;
 }

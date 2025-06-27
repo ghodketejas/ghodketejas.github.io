@@ -208,6 +208,8 @@ async function sendChat() {
   botResponse.innerHTML = `<strong>TejasBot:</strong> ${data.reply}`;
   log.appendChild(botResponse);
   log.scrollTop = log.scrollHeight;
+
+  replyEl.classList.add("typing-animation");
 }
 
 function loadSample(text) {
