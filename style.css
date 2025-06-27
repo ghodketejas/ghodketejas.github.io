@@ -446,11 +446,12 @@ button.btn-outline-info:hover {
 
 /* Typing Animation for TejasBot */
 .typing-animation {
+  display: inline-block;
+  overflow: hidden;
   border-right: 2px solid #0dcaf0;
   white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: typingEffect 2s steps(30, end), blinkCursor 0.7s step-end infinite;
+  width: 1ch;
+  animation: blinkCursor 0.8s step-end infinite;
 }
 
 @keyframes typingEffect {

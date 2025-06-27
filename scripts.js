@@ -186,28 +186,42 @@ async function sendChat() {
   const userMsg = input.value.trim();
   if (!userMsg) return;
 
-  log.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+  // Add user message
+  const userEntry = document.createElement("div");
+  userEntry.innerHTML = `<strong>You:</strong> ${userMsg}`;
+  log.appendChild(userEntry);
+
   input.value = "";
 
+  // TejasBot typing placeholder
   const botTyping = document.createElement("div");
   botTyping.id = "typing";
-  botTyping.innerHTML = `<em>TejasBot is typing...</em>`;
+  botTyping.innerHTML = `<strong>TejasBot:</strong> <span class="typing-animation">|</span>`;
   log.appendChild(botTyping);
   log.scrollTop = log.scrollHeight;
 
-  const res = await fetch("https://ghodketejas-github-io.vercel.app/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: userMsg })
-  });
+  try {
+    const res = await fetch("https://ghodketejas-github-io.vercel.app/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userMsg })
+    });
+    
+    const data = await res.json();
+    botTyping.remove();
 
-  const data = await res.json();
-  botTyping.remove();
+    // Add response with animation on content, not the whole div
+    const botResponse = document.createElement("div");
+    botResponse.innerHTML = `<strong>TejasBot:</strong> <span>${data.reply || 'Something went wrong 😕'}</span>`;
+    log.appendChild(botResponse);
+    log.scrollTop = log.scrollHeight;
 
-  const botResponse = document.createElement("div");
-  botResponse.innerHTML = `<strong>TejasBot:</strong> <span class="typing-animation">${data.reply}</span>`;
-  log.appendChild(botResponse);
-  log.scrollTop = log.scrollHeight;
+  } catch (err) {
+    botTyping.remove();
+    const botError = document.createElement("div");
+    botError.innerHTML = `<strong>TejasBot:</strong> <span>Oops! I'm having trouble replying right now.</span>`;
+    log.appendChild(botError);
+  }
 }
 
 function loadSample(text) {
