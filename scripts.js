@@ -232,3 +232,17 @@ function loadSample(text) {
   document.getElementById("chat-input").value = text;
   sendChat();
 }
+
+document.getElementById("chat-input").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    sendChat();
+  }
+});
+
+document.getElementById("chat-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    sendChat();
+  }
+});
