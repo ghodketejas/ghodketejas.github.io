@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-    // --- Email Show/Hide Toggle ---
+  // --- Email Show/Hide Toggle ---
   const emailBtn = document.getElementById("toggle-email");
   if (emailBtn) {
     emailBtn.addEventListener("click", () => {
@@ -107,17 +107,41 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.toggle("alt-theme");
     });
   }
+
+  // --- Chat Input: Enter Key Sends ---
+  const chatInput = document.getElementById("chat-input");
+  if (chatInput) {
+    chatInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendChat();
+      }
+    });
+  }
+
+  // --- Hint Buttons ---
+  document.querySelectorAll(".hint-buttons button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const text = btn.textContent.trim();
+      if (text.includes("Projects")) loadSample("What projects have you worked on?");
+      else if (text.includes("language")) loadSample("What’s your favorite programming language?");
+      else if (text.includes("fun")) loadSample("Tell me something fun about you!");
+    });
+  });
 });
 
 // Digital Clock
 setInterval(() => {
   const now = new Date();
-  document.getElementById("digit-clock").textContent = now.toLocaleTimeString();
+  const clock = document.getElementById("digit-clock");
+  if (clock) clock.textContent = now.toLocaleTimeString();
 }, 1000);
 
 // Analog Clock with Canvas
 function drawAnalogClock() {
   const canvas = document.getElementById("analog-clock");
+  if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
   const radius = canvas.height / 2;
   ctx.translate(radius, radius);
@@ -126,7 +150,6 @@ function drawAnalogClock() {
     const now = new Date();
     ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
 
-    // Clock face
     ctx.beginPath();
     ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
     ctx.fillStyle = "#222";
@@ -135,7 +158,6 @@ function drawAnalogClock() {
     ctx.lineWidth = 4;
     ctx.stroke();
 
-    // Hands
     const sec = now.getSeconds();
     const min = now.getMinutes();
     const hr = now.getHours();
@@ -163,21 +185,26 @@ function drawAnalogClock() {
 }
 drawAnalogClock();
 
+// Jokes
 function fetchJoke() {
   fetch("https://v2.jokeapi.dev/joke/Any?format=txt")
     .then(res => res.text())
     .then(data => {
-      document.getElementById("joke-box").textContent = data;
+      const jokeBox = document.getElementById("joke-box");
+      if (jokeBox) jokeBox.textContent = data;
     });
 }
 fetchJoke();
 setInterval(fetchJoke, 60000);
 
+// XKCD Comic
 fetch("https://xkcd.vercel.app/?comic=latest")
   .then(res => res.json())
   .then(data => {
-    document.getElementById("xkcd-img").src = data.img;
-    document.getElementById("xkcd-title").textContent = data.title;
+    const img = document.getElementById("xkcd-img");
+    const title = document.getElementById("xkcd-title");
+    if (img) img.src = data.img;
+    if (title) title.textContent = data.title;
   });
 
 async function sendChat() {
@@ -186,15 +213,12 @@ async function sendChat() {
   const userMsg = input.value.trim();
   if (!userMsg) return;
 
-  // User bubble
   const userBubble = document.createElement("div");
   userBubble.className = "chat-bubble user";
   userBubble.innerHTML = `<span>${userMsg}</span>`;
   log.appendChild(userBubble);
-
   input.value = "";
 
-  // Typing bubble
   const typingBubble = document.createElement("div");
   typingBubble.className = "chat-bubble bot typing";
   typingBubble.innerHTML = `<span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>`;
@@ -211,7 +235,6 @@ async function sendChat() {
     const data = await res.json();
     typingBubble.remove();
 
-    // Bot response bubble
     const botBubble = document.createElement("div");
     botBubble.className = "chat-bubble bot";
     botBubble.innerHTML = `<span>${data.reply || 'Something went wrong 😬'}</span>`;
@@ -232,17 +255,3 @@ function loadSample(text) {
   document.getElementById("chat-input").value = text;
   sendChat();
 }
-
-document.getElementById("chat-input").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    sendChat();
-  }
-});
-
-document.getElementById("chat-input").addEventListener("keydown", function (e) {
-  if (e.key === "Enter" && !e.shiftKey) {
-    e.preventDefault();
-    sendChat();
-  }
-});
