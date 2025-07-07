@@ -397,6 +397,26 @@ button.btn-outline-info:hover {
   transform: scale(1.02);
 }
 
+/* Chat Scrollbar Styling */
+#chat-log::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-log::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+#chat-log::-webkit-scrollbar-thumb {
+  background-color: #0dcaf0;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+#chat-log::-webkit-scrollbar-thumb:hover {
+  background-color: #17d4ff;
+}
+
 /* Hint Buttons Hidden Initially */
 .hint-container {
   opacity: 0;

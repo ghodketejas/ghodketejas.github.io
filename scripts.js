@@ -252,6 +252,11 @@ async function sendChat() {
 }
 
 function loadSample(text) {
-  document.getElementById("chat-input").value = text;
-  sendChat();
+  const input = document.getElementById("chat-input");
+  input.value = text;
+
+  // Delay slightly to ensure value is set before sending
+  setTimeout(() => {
+    sendChat();
+  }, 50);
 }
