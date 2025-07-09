@@ -508,6 +508,10 @@ button.btn-outline-info:hover {
   align-self: flex-start;
   margin-right: auto;
   border-bottom-left-radius: 4px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 80%;
 }
 
 #chat-log {
