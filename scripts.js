@@ -226,7 +226,7 @@ async function sendChat() {
   log.scrollTop = log.scrollHeight;
 
   try {
-    const res = await fetch("https://tejas-chat-api.onrender.com/api/chat", {
+    const res = await fetch("https://tejas-chat-api.vercel.app/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userMsg })
