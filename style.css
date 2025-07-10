@@ -594,12 +594,12 @@ button.btn-outline-info:hover {
 }
 
 #chat-container {
-  width: 99vw;
+  width: 90vw;
   height: 88vh;
   max-width: 1600px;
   max-height: 900px;
   margin: 0 auto;
-  padding: 120px 48px 48px 48px;
+  padding: 15px 20px 15px 20px;
   border-radius: 32px;
   background-color: #181c20;
   box-shadow: 0 0 6px 1.5px #0dcaf0;
@@ -619,10 +619,10 @@ button.btn-outline-info:hover {
 
 #chat-avatar {
   position: absolute;
-  top: -100px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 170px;
+  width: 165px;
   height: 170px;
   border-radius: 50%;
   border: 3px solid #0dcaf0;
@@ -633,8 +633,8 @@ button.btn-outline-info:hover {
 }
 
 .chat-avatar-intro {
-  margin-top: 85px;
-  margin-bottom: 32px;
+  margin-top: 200px;
+  margin-bottom: 20px;
   color: #0dcaf0;
   font-size: 1.25rem;
   text-align: center;
@@ -644,7 +644,7 @@ button.btn-outline-info:hover {
 }
 
 #chat-container.with-avatar {
-  padding-top: 140px;
+  padding-top: 14px;
 }
 
 @media (max-width: 900px) {
