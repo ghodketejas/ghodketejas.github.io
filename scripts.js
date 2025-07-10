@@ -252,8 +252,19 @@ async function sendChat() {
 
     const botBubble = document.createElement("div");
     botBubble.className = "chat-bubble bot";
-    botBubble.innerHTML = `<span>${data.reply || 'Something went wrong 😬'}</span>`;
+    const reply = data.reply || 'Something went wrong 😬';
+    // Typing animation for bot reply
+    let i = 0;
+    function typeWriter() {
+      if (i <= reply.length) {
+        botBubble.innerHTML = `<span>${reply.slice(0, i)}</span>`;
+        log.scrollTop = log.scrollHeight;
+        i++;
+        setTimeout(typeWriter, 15);
+      }
+    }
     log.appendChild(botBubble);
+    typeWriter();
 
   } catch {
     typingBubble.remove();
