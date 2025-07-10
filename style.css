@@ -532,3 +532,80 @@ button.btn-outline-info:hover {
 .typing-dots span:nth-child(3) {
   animation-delay: 0.4s;
 }
+
+/* Floating Chat Button */
+#open-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  border: none;
+  z-index: 1200;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+#open-chat-btn:hover {
+  box-shadow: 0 4px 16px rgba(13,202,240,0.25);
+  background: #f0faff;
+}
+
+/* Chat Overlay */
+#chat-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1300;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+#chat-overlay[style*="display: flex"] {
+  display: flex !important;
+  opacity: 1;
+}
+#chat-overlay[style*="display: none"] {
+  opacity: 0;
+}
+
+#chatbox-center {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-chat-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #0dcaf0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.2s;
+}
+#close-chat-btn:hover {
+  background: #e6f7fa;
+}
+
+/* Hide original chat-container if outside overlay */
+body > .container #chat-container {
+  display: none !important;
+}

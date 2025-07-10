@@ -71,19 +71,33 @@
     </div>
   </div>
 
-  <!-- Chatbot Box -->
-  <div id="chat-container">
-    <h3 class="text-info text-center">Ask Me Anything</h3>
-    <div id="chat-log"></div>
-    <input type="text" id="chat-input" class="form-control" placeholder="Ask me something about Tejas..." />
-    <button class="btn btn-outline-info mt-2 w-100" onclick="sendChat()">Send</button>
+  <!-- Floating Chat Button -->
+  <button id="open-chat-btn" style="display: flex; align-items: center; justify-content: center; position: fixed; bottom: 32px; left: 32px; width: 56px; height: 56px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.18); border: none; z-index: 1200; cursor: pointer; transition: box-shadow 0.2s;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 15.5C21 16.3284 20.3284 17 19.5 17H7.41421L3.70711 20.7071C3.07714 21.3371 2 20.8906 2 20.0001V4.5C2 3.67157 2.67157 3 3.5 3H19.5C20.3284 3 21 3.67157 21 4.5V15.5Z" stroke="#0dcaf0" stroke-width="2"/>
+    </svg>
+  </button>
 
-    <div class="hint-container">
-      <p class="hint-note">Try asking:</p>
-      <div class="hint-buttons">
-        <button onclick="loadSample('What projects have you worked on?')">Projects?</button>
-        <button onclick="loadSample('What’s your favorite programming language?')">Fav language?</button>
-        <button onclick="loadSample('Tell me something fun about you!')">Fun fact?</button>
+  <!-- Chat Overlay (hidden by default) -->
+  <div id="chat-overlay" style="display: none; position: fixed; z-index: 1300; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(10, 10, 10, 0.96); backdrop-filter: blur(2px); align-items: center; justify-content: center;">
+    <div style="position: absolute; top: 32px; right: 48px; z-index: 1400;">
+      <button id="close-chat-btn" style="background: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; color: #0dcaf0; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.18);">&times;</button>
+    </div>
+    <div id="chatbox-center" style="width: 100%; max-width: 600px; margin: 0 auto;">
+      <!-- Chatbot Box moved here -->
+      <div id="chat-container">
+        <h3 class="text-info text-center">Ask Me Anything</h3>
+        <div id="chat-log"></div>
+        <input type="text" id="chat-input" class="form-control" placeholder="Ask me something about Tejas..." />
+        <button class="btn btn-outline-info mt-2 w-100" onclick="sendChat()">Send</button>
+        <div class="hint-container">
+          <p class="hint-note">Try asking:</p>
+          <div class="hint-buttons">
+            <button onclick="loadSample('What projects have you worked on?')">Projects?</button>
+            <button onclick="loadSample('What’s your favorite programming language?')">Fav language?</button>
+            <button onclick="loadSample('Tell me something fun about you!')">Fun fact?</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -94,5 +108,22 @@
 
 <!-- JS cookies to track user visits -->
 <script src="scripts.js"></script>
+
+<script>
+// Show chat overlay
+const openChatBtn = document.getElementById('open-chat-btn');
+const chatOverlay = document.getElementById('chat-overlay');
+const closeChatBtn = document.getElementById('close-chat-btn');
+
+openChatBtn.addEventListener('click', function() {
+  chatOverlay.style.display = 'flex';
+  openChatBtn.style.display = 'none';
+});
+
+closeChatBtn.addEventListener('click', function() {
+  chatOverlay.style.display = 'none';
+  openChatBtn.style.display = 'flex';
+});
+</script>
 </body>
 </html>
