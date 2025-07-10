@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeChatBtn = document.getElementById('close-chat-btn');
 
   openChatBtn.addEventListener('click', function() {
-    chatOverlay.classList.add('open');
+    chatOverlay.style.display = 'flex';
     openChatBtn.style.display = 'none';
   });
 
   closeChatBtn.addEventListener('click', function() {
-    chatOverlay.classList.remove('open');
+    chatOverlay.style.display = 'none';
     openChatBtn.style.display = 'flex';
   });
 });
