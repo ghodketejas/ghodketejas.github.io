@@ -79,13 +79,13 @@
   </button>
 
   <!-- Chat Overlay (hidden by default) -->
-  <div id="chat-overlay" style="display: none; position: fixed; z-index: 1300; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(10, 10, 10, 0.96); backdrop-filter: blur(2px); align-items: center; justify-content: center;">
-    <div style="position: absolute; top: 32px; right: 48px; z-index: 1400;">
-      <button id="close-chat-btn" style="background: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; color: #0dcaf0; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.18);">&times;</button>
-    </div>
-    <div id="chatbox-center" style="width: 100%; max-width: 600px; margin: 0 auto;">
+  <div id="chat-overlay">
+    <button id="close-chat-btn">&times;</button>
+    <div id="chatbox-center">
       <!-- Chatbot Box moved here -->
       <div id="chat-container" class="with-avatar">
+        <img id="chat-avatar" src="images/professional_picture_1.jpg" alt="AI Avatar">
+        <div class="chat-avatar-intro">Hey, this is TejasBot. Talk with me as you would naturally.</div>
         <h3 class="text-info text-center">Ask Me Anything</h3>
         <div id="chat-log"></div>
         <input type="text" id="chat-input" class="form-control" placeholder="Ask me something about Tejas..." />
@@ -98,8 +98,6 @@
             <button onclick="loadSample('Tell me something fun about you!')">Fun fact?</button>
           </div>
         </div>
-        <img id="chat-avatar" src="images/professional_picture_1.jpg" alt="AI Avatar">
-        <div class="chat-avatar-intro">Hey, this is TejasBot. Talk with me as you would naturally.</div>
       </div>
     </div>
   </div>

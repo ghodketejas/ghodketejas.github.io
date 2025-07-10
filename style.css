@@ -588,8 +588,6 @@ button.btn-outline-info:hover {
 #chatbox-center {
   width: 100vw;
   height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
