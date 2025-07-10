@@ -544,16 +544,25 @@ button.btn-outline-info:hover {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  border: none;
+  background: #181c20; /* dark background */
+  border: 2px solid #0dcaf0; /* neon cyan border */
+  box-shadow: 0 0 16px #0dcaf0, 0 2px 8px rgba(0,0,0,0.18);
   z-index: 1200;
   cursor: pointer;
   transition: box-shadow 0.2s, background 0.2s;
+  animation: pulse 2s infinite;
+}
+#open-chat-btn svg path {
+  stroke: #0dcaf0 !important;
 }
 #open-chat-btn:hover {
-  box-shadow: 0 4px 16px rgba(13,202,240,0.25);
-  background: #f0faff;
+  background: #23272b;
+  box-shadow: 0 0 32px #0dcaf0, 0 4px 16px rgba(13,202,240,0.25);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 16px #0dcaf0, 0 2px 8px rgba(0,0,0,0.18);}
+  50% { box-shadow: 0 0 32px #0dcaf0, 0 4px 16px rgba(13,202,240,0.25);}
+  100% { box-shadow: 0 0 16px #0dcaf0, 0 2px 8px rgba(0,0,0,0.18);}
 }
 
 /* Chat Overlay */
@@ -608,4 +617,11 @@ button.btn-outline-info:hover {
 /* Hide original chat-container if outside overlay */
 body > .container #chat-container {
   display: none !important;
+}
+
+/* Ensure chatbox is visible in overlay */
+#chat-overlay #chat-container {
+  display: block !important;
+  opacity: 1;
+  transform: none;
 }
