@@ -128,6 +128,21 @@ document.addEventListener('DOMContentLoaded', function () {
       else if (text.includes("fun")) loadSample("Tell me something fun about you!");
     });
   });
+
+  // Show chat overlay
+  const openChatBtn = document.getElementById('open-chat-btn');
+  const chatOverlay = document.getElementById('chat-overlay');
+  const closeChatBtn = document.getElementById('close-chat-btn');
+
+  openChatBtn.addEventListener('click', function() {
+    chatOverlay.classList.add('open');
+    openChatBtn.style.display = 'none';
+  });
+
+  closeChatBtn.addEventListener('click', function() {
+    chatOverlay.classList.remove('open');
+    openChatBtn.style.display = 'flex';
+  });
 });
 
 // Digital Clock

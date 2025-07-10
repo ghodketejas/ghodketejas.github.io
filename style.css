@@ -578,11 +578,14 @@ button.btn-outline-info:hover {
   height: 100vh;
   background: rgba(10, 10, 10, 0.98);
   backdrop-filter: blur(2px);
-  transition: opacity 0.3s;
-  opacity: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1);
 }
-#chat-overlay[style*="display: flex"] {
+#chat-overlay.open {
   display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #chatbox-center {
@@ -595,7 +598,7 @@ button.btn-outline-info:hover {
 
 #chat-container {
   width: 90vw;
-  height: 90vh;
+  height: 87vh;
   max-width: 1600px;
   max-height: 900px;
   margin: 0 auto;
@@ -605,13 +608,18 @@ button.btn-outline-info:hover {
   box-shadow: 0 0 6px 1.5px #0dcaf0;
   position: relative;
   z-index: 1;
-  opacity: 1;
-  transform: none;
+  opacity: 0;
+  transform: scale(0.96) translateY(30px);
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   transition: box-shadow 0.3s;
+}
+#chat-overlay.open #chat-container {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 #chat-container:hover, #chat-container:focus-within {
   box-shadow: 0 0 12px 2px #0dcaf0;
