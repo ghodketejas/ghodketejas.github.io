@@ -225,8 +225,14 @@ fetch("https://xkcd.vercel.app/?comic=latest")
 async function sendChat() {
   const input = document.getElementById("chat-input");
   const log = document.getElementById("chat-log");
+  const chatContainer = document.getElementById("chat-container");
   const userMsg = input.value.trim();
   if (!userMsg) return;
+
+  // Add chat-has-content class when first message is sent
+  if (log.children.length === 0) {
+    chatContainer.classList.add("chat-has-content");
+  }
 
   const userBubble = document.createElement("div");
   userBubble.className = "chat-bubble user";

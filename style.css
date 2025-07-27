@@ -533,6 +533,18 @@ button.btn-outline-info:hover {
   scroll-behavior: smooth;
 }
 
+/* Dynamic avatar shrinking when chat has content */
+.chat-has-content #chat-avatar {
+  width: 80px;
+  height: 85px;
+  top: 15px;
+}
+
+.chat-has-content .chat-avatar-intro {
+  margin-top: 100px;
+  font-size: 1rem;
+}
+
 /* Optional: Typing animation for bot */
 .typing-dots span {
   display: inline-block;
@@ -631,11 +643,11 @@ button.btn-outline-info:hover {
 
 #chat-avatar {
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 150px;
-  height: 155px;
+  width: 120px;
+  height: 125px;
   border-radius: 50%;
   border: 3px solid #0dcaf0;
   box-shadow: 0 0 4px 1px #0dcaf0;
@@ -645,10 +657,10 @@ button.btn-outline-info:hover {
 }
 
 .chat-avatar-intro {
-  margin-top: 180px;
-  margin-bottom: 15px;
+  margin-top: 150px;
+  margin-bottom: 10px;
   color: #0dcaf0;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-align: center;
   font-weight: 500;
   font-style: italic;
@@ -685,6 +697,18 @@ button.btn-outline-info:hover {
   #chat-log {
     min-height: 0;
     padding: 8px;
+  }
+  
+  /* Mobile avatar shrinking */
+  .chat-has-content #chat-avatar {
+    width: 60px;
+    height: 60px;
+    top: -40px;
+  }
+  
+  .chat-has-content .chat-avatar-intro {
+    margin-top: 30px;
+    font-size: 0.9rem;
   }
 }
 
