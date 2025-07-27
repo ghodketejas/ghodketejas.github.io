@@ -636,7 +636,7 @@ button.btn-outline-info:hover {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding-bottom: 140px;
+  padding-bottom: 165px;
 }
 #chat-container:hover, #chat-container:focus-within {
   box-shadow: 0 0 12px 2px #0dcaf0;
@@ -821,7 +821,7 @@ body > .container #chat-container {
 /* Chat controls wrapper */
 #chat-controls {
   position: absolute;
-  bottom: 0;
+  bottom: 12px;
   left: 20px;
   right: 20px;
   padding: 0;
