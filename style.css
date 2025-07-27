@@ -840,5 +840,5 @@ body > .container #chat-container {
   background: transparent;
   border: none;
   margin: 0;
-  height: 0;
+  flex: 1; /* keep space in layout */
 }
