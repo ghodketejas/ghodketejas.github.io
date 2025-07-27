@@ -636,7 +636,7 @@ button.btn-outline-info:hover {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding-bottom: 120px; /* space for controls */
+  padding-bottom: 20px; /* reduced */
 }
 #chat-container:hover, #chat-container:focus-within {
   box-shadow: 0 0 12px 2px #0dcaf0;
@@ -820,10 +820,15 @@ body > .container #chat-container {
 
 /* Chat controls wrapper */
 #chat-controls {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  width: auto;
-  margin-top: 0;
+  width: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Hide line when chat-log empty */
+#chat-log:empty {
+  background: transparent;
+  border: none;
+  margin: 0;
+  height: 0;
 }
