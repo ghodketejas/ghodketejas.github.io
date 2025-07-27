@@ -816,3 +816,10 @@ body > .container #chat-container {
     padding: 8px 12px;
   }
 }
+
+/* Chat controls wrapper */
+#chat-controls {
+  width: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
+}

@@ -87,16 +87,21 @@
         <img id="chat-avatar" src="images/ai_img_1.png" alt="AI Avatar">
         <div class="chat-avatar-intro">Hey, this is TejasBot. Talk with me as you would naturally.</div>
         <div id="chat-log"></div>
-        <input type="text" id="chat-input" class="form-control" placeholder="Ask me anything..." />
-        <button class="btn btn-outline-info mt-2 w-100" onclick="sendChat()">Send</button>
-        <div class="hint-container">
-          <p class="hint-note">Try asking:</p>
-          <div class="hint-buttons">
-            <button onclick="loadSample('What projects has Tejas worked on?')">Projects?</button>
-            <button onclick="loadSample('What’s Tejas favorite programming language?')">Fav language?</button>
-            <button onclick="loadSample('Tell me a fun fact about Tejas!')">Fun fact?</button>
+
+        <!-- Begin chat controls wrapper -->
+        <div id="chat-controls" class="w-100 d-flex flex-column">
+          <input type="text" id="chat-input" class="form-control" placeholder="Ask me anything..." />
+          <button class="btn btn-outline-info mt-2 w-100" onclick="sendChat()">Send</button>
+          <div class="hint-container">
+            <p class="hint-note">Try asking:</p>
+            <div class="hint-buttons">
+              <button onclick="loadSample('What projects have you worked on?')">Projects?</button>
+              <button onclick="loadSample('What’s your favorite programming language?')">Fav language?</button>
+              <button onclick="loadSample('Tell me something fun about you!')">Fun fact?</button>
+            </div>
           </div>
         </div>
+        <!-- End chat controls wrapper -->
       </div>
     </div>
   </div>
