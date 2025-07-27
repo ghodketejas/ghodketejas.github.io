@@ -536,6 +536,7 @@ button.btn-outline-info:hover {
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.2);
   scroll-behavior: smooth;
+  flex: 0 1 auto;
 }
 
 /* Dynamic avatar shrinking when chat has content */
@@ -832,7 +833,7 @@ body > .container #chat-container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0px;
 }
 
 /* Hide line when chat-log empty */
