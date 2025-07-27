@@ -707,3 +707,49 @@ body > .container #chat-container {
   opacity: 1;
   transform: none;
 }
+
+/* Game Demo Container Styles */
+.game-demo-container {
+  background: rgba(13, 202, 240, 0.05);
+  border: 1px solid rgba(13, 202, 240, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.game-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13, 202, 240, 0.15);
+}
+
+.game-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+
+.game-iframe:hover {
+  box-shadow: 0 6px 25px rgba(13, 202, 240, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Responsive adjustments for game iframe */
+@media (max-width: 768px) {
+  .game-demo-container {
+    padding: 15px;
+  }
+  
+  .game-iframe-wrapper {
+    padding-bottom: 75%; /* Slightly taller on mobile for better touch interaction */
+  }
+}

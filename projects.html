@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVIGATION -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">Tejas Ghodke</a>
@@ -40,26 +40,240 @@
 
 <div id="visit-message" class="alert alert-info text-center my-3" role="alert" style="display: none;"></div>
 
+<!-- Floating Hot-Menu -->
+<nav id="hot-menu" class="d-none d-md-block">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#advanced-tic-tac-toe">Advanced Tic-Tac-Toe</a></li>
+    <li><a href="#snake-game-ai">Snake Game AI</a></li>
+  </ul>
+</nav>
+
 <!-- MAIN CONTENT -->
-<main class="landing">
-  <div class="container text-center">
-    <h1 class="mb-4">My Projects</h1>
-    <p class="lead">This page will showcase the technical and creative projects I've built over time.</p>
+<main class="container pt-5">
+  <!-- Title -->
+  <header class="text-center my-5">
+    <h1 class="display-5 fw-bold text-white">My Projects</h1>
+    <p class="text-info fs-5 fst-italic mb-0">Showcasing technical skills and creative solutions</p>
+  </header>
 
-    <div class="text-start d-inline-block" style="max-width: 700px; margin-top: 40px;">
-      <h3>🚧 Placeholder Project 1</h3>
-      <p>A brief summary of the project, tools used, challenges faced, and what you learned.</p>
+  <!-- Overview Section -->
+  <section id="overview" class="mb-5">
+    <h2 class="text-info">Projects Overview</h2>
+    <p class="text-light">
+      This portfolio showcases two significant projects that demonstrate my technical skills across different domains. The Advanced Tic-Tac-Toe game represents my expertise in cross-platform mobile development using Flutter, featuring an adaptive AI system and modern UI design. The Snake Game AI project showcases my capabilities in machine learning and reinforcement learning, implementing sophisticated neural networks and automated benchmarking systems.
+    </p>
+    <h4 class="text-light">Technologies & Libraries Used</h4>
+    <ul class="text-light">
+      <li><strong>Mobile Development:</strong> Flutter 3.4.3+, Dart, Material Design, Android Studio</li>
+      <li><strong>Machine Learning:</strong> Python 3.10, PyTorch 2.x, CUDA, Scikit-learn, NumPy, Matplotlib</li>
+      <li><strong>Game Development:</strong> pygame, custom game engines</li>
+      <li><strong>Web Technologies:</strong> HTML5, CSS3, JavaScript, Bootstrap 5</li>
+      <li><strong>Deployment & CI/CD:</strong> GitHub Pages, GitHub Actions</li>
+      <li><strong>Data Management:</strong> SharedPreferences, CSV logging, model serialization</li>
+      <li><strong>Development Tools:</strong> Git, VS Code, Jupyter Notebooks</li>
+    </ul>
+    <p class="text-info text-end fst-italic">Last updated: <span id="last-edited"></span></p>
+  </section>
 
-      <h3>🚧 Placeholder Project 2</h3>
-      <p>A brief summary of the project, tools used, challenges faced, and what you learned.</p>
+  <!-- Advanced Tic-Tac-Toe Section -->
+  <section id="advanced-tic-tac-toe" class="mb-5">
+    <h2 class="text-info">Advanced Tic-Tac-Toe</h2>
+    <p class="text-light">
+      A modern, cross-platform implementation of Advanced Tic Tac Toe built with Flutter. This isn't your ordinary tic-tac-toe - it's a strategic game where you play on a 3x3 grid of tic-tac-toe boards! The game features an adaptive AI system, beautiful UI with dark theme and neon accents, and comprehensive statistics tracking.
+    </p>
+
+    <div class="accordion" id="ticTacToeAccordion">
+
+      <!-- Advanced Tic-Tac-Toe Game -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTicTacToe">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTicTacToe" aria-expanded="true" aria-controls="collapseTicTacToe">
+            Advanced Tic-Tac-Toe Game
+          </button>
+        </h2>
+        <div id="collapseTicTacToe" class="accordion-collapse collapse show" aria-labelledby="headingTicTacToe" data-bs-parent="#ticTacToeAccordion">
+          <div class="accordion-body">
+
+            <p>
+              A modern, cross-platform implementation of Advanced Tic Tac Toe built with Flutter. This isn't your ordinary tic-tac-toe - it's a strategic game where you play on a 3x3 grid of tic-tac-toe boards! The game features an adaptive AI system, beautiful UI with dark theme and neon accents, and comprehensive statistics tracking.
+            </p>
+
+            <!-- Embedded Game Demo -->
+            <div class="game-demo-container mb-4">
+              <h4 class="text-light mb-3">🎮 Try the Game Right Here!</h4>
+              <div class="game-iframe-wrapper">
+                <iframe 
+                  src="https://ghodketejas.github.io/advanced_tic_tac_toe/" 
+                  title="Advanced Tic Tac Toe Game"
+                  class="game-iframe"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <p class="text-light mt-2 small">
+                <i class="bi bi-info-circle"></i> 
+                The game is fully playable in this window.
+              </p>
+            </div>
+
+            <h4 class="text-light">Project Overview</h4>
+            <ul>
+              <li><strong>Platform:</strong> Cross-platform application (Android, iOS, Web, Windows, macOS, Linux)</li>
+              <li><strong>Technology Stack:</strong> Flutter 3.4.3+, Dart, Material Design</li>
+              <li><strong>Development Status:</strong> Active development - preparing for Play Store and App Store release</li>
+              <li><strong>Deployment:</strong> Automated GitHub Actions deployment to GitHub Pages</li>
+            </ul>
+
+            <h4 class="text-light">Key Features</h4>
+            <ul>
+              <li><strong>Advanced Gameplay:</strong> Play on a 3x3 grid of tic-tac-toe boards with strategic depth</li>
+              <li><strong>Multiple Game Modes:</strong> AI opponent with adaptive difficulty and pass-and-play multiplayer</li>
+              <li><strong>Smart AI System:</strong> Computer opponent that adapts to your skill level (difficulty 0-100)</li>
+              <li><strong>Beautiful UI:</strong> Modern dark theme with neon blue and orange accents</li>
+              <li><strong>Animated Background:</strong> Floating grid animations for visual appeal</li>
+              <li><strong>Statistics Tracking:</strong> Persistent win/loss/draw statistics with SharedPreferences</li>
+              <li><strong>Cross-Platform:</strong> Consistent experience across all platforms</li>
+            </ul>
+
+            <h4 class="text-light">Technical Implementation</h4>
+            <p class="text-light">
+              The application is built using Flutter's modern widget system with a focus on clean architecture and maintainable code. The core game logic is implemented in a dedicated <code>game_logic.dart</code> file that handles all board state management, move validation, and win condition checking. This modular approach ensures that the game logic is completely separated from the UI layer, making it easy to test and modify.
+            </p>
+            <p class="text-light">
+              State management is handled through Flutter's built-in StatefulWidget system, which provides efficient re-rendering and state persistence. The game maintains multiple state variables including the current board configuration, active player, game status, and AI difficulty level. Data persistence is implemented using SharedPreferences to store player statistics, game preferences, and AI learning progress across app sessions.
+            </p>
+            <p class="text-light">
+              The UI architecture follows a modular design pattern with custom widgets for each game component. The main game board is composed of nine smaller tic-tac-toe boards, each implemented as a separate widget that can be individually updated. This approach allows for smooth animations, efficient rendering, and easy customization of the visual appearance.
+            </p>
+            <p class="text-light">
+              Deployment is fully automated using GitHub Actions, which builds the Flutter web application and deploys it to GitHub Pages on every push to the main branch. This ensures that the live demo is always up-to-date with the latest features and bug fixes.
+            </p>
+
+            <h4 class="text-light">AI System</h4>
+            <p class="text-light">
+              The AI system implements an adaptive difficulty algorithm that provides a dynamic challenge level based on player performance. The difficulty ranges from 0 (easiest) to 100 (hardest), with the AI adjusting its strategy accordingly. At lower difficulty levels, the AI makes more random moves, while at higher levels, it employs sophisticated game theory principles.
+            </p>
+            <p class="text-light">
+              The AI's decision-making process follows a hierarchical approach: first, it evaluates all possible moves for immediate winning opportunities. If no winning move is available, it looks for moves that block the opponent from winning. Finally, if neither condition is met, it selects moves based on the current difficulty level - either strategically or randomly.
+            </p>
+            <p class="text-light">
+              The learning system continuously adapts the AI's difficulty based on game outcomes. When the AI wins, the difficulty increases slightly, making the game more challenging. Conversely, when the player wins, the difficulty decreases, ensuring the game remains accessible and enjoyable. This creates a personalized gaming experience that grows with the player's skill level.
+            </p>
+            <p class="text-light">
+              The move evaluation algorithm uses a weighted scoring system that considers board position, potential future moves, and strategic value. This allows the AI to think several moves ahead and make decisions that maximize its chances of winning while maintaining the appropriate challenge level for the player.
+            </p>
+
+            <h4 class="text-light">Challenges & Solutions</h4>
+            <p class="text-light">
+              <strong>Complex Game Logic Implementation:</strong> The biggest challenge was implementing the intricate game logic for a 3x3 grid of tic-tac-toe boards. Traditional tic-tac-toe algorithms don't scale well to this complexity. I solved this by developing a modular approach where each small board is treated as a separate entity with its own state, while maintaining a global game state that tracks the overall progress. This separation of concerns made the code more maintainable and easier to debug.
+            </p>
+            <p class="text-light">
+              <strong>Adaptive AI Development:</strong> Creating an AI that provides appropriate challenge levels was particularly challenging. A purely random AI would be too easy, while a perfect AI would be unbeatable. I implemented a difficulty-based move selection system that uses weighted randomization. The AI evaluates all possible moves and assigns probabilities based on the current difficulty level, ensuring that players of all skill levels can enjoy the game.
+            </p>
+            <p class="text-light">
+              <strong>Cross-Platform Compatibility:</strong> Ensuring consistent performance and user experience across all platforms required careful consideration of platform-specific limitations. I used Flutter's responsive design system and Material Design principles to create a unified experience. The game automatically adapts its layout and interaction patterns based on the target platform, whether it's touch-based mobile devices or mouse-driven desktop environments.
+            </p>
+
+            <div class="alert alert-info mt-3">
+              <strong>What I Learned:</strong> This project deepened my understanding of Flutter's widget system, cross-platform development, and game AI implementation. I gained experience in creating responsive UIs, implementing complex game logic, automated deployment with GitHub Actions, and building adaptive AI systems. The project also taught me about state management, data persistence, and user experience design for mobile applications.
+            </div>
+
+            <p class="fst-italic text-light mt-3">
+              Repository: <a href="https://github.com/ghodketejas/advanced_tic_tac_toe" target="_blank">GitHub Link</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End mobile accordion -->
+  </section>
+
+  <!-- Snake Game AI Section -->
+  <section id="snake-game-ai" class="mb-5">
+    <h2 class="text-info">Snake Game AI</h2>
+    <p class="text-light">
+      This project is an enhanced clone of Patrick Loeber's popular Snake-AI tutorial. The goal is to experiment with more sophisticated reinforcement-learning techniques, richer game state representations, and a fully reproducible training / benchmarking pipeline.
+    </p>
+
+    <div class="accordion" id="snakeGameAccordion">
+
+      <!-- AI/ML Snake Agent -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSnakeAgent">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSnakeAgent" aria-expanded="true" aria-controls="collapseSnakeAgent">
+            AI/ML Snake Agent
+          </button>
+        </h2>
+        <div id="collapseSnakeAgent" class="accordion-collapse collapse show" aria-labelledby="headingSnakeAgent" data-bs-parent="#snakeGameAccordion">
+          <div class="accordion-body">
+
+            <p>
+              This project is an enhanced clone of Patrick Loeber’s popular Snake-AI tutorial. The goal is to experiment with more sophisticated reinforcement-learning techniques, richer game state representations, and a fully reproducible training / benchmarking pipeline.
+            </p>
+
+            <h4 class="text-light">Project Overview</h4>
+            <ul>
+              <li><strong>Technology Stack:</strong> Python 3.10, PyTorch 2.x, CUDA, Scikit-learn, pygame, NumPy, Matplotlib</li>
+              <li><strong>Algorithms:</strong> Deep Q-Learning (baseline) and an Enhanced DQN with deeper CNN layers & reward shaping</li>
+              <li><strong>Training Infrastructure:</strong> GPU acceleration with CUDA + multiprocessing for live plotting</li>
+              <li><strong>Project Status:</strong> Active — benchmarking and analysis phase in progress</li>
+            </ul>
+
+            <h4 class="text-light">Key Features</h4>
+            <ul>
+              <li>Two distinct agents: the original <code>agent.py</code> (Patrick’s logic) and <code>smarter_agent.py</code> with a wider state space and deeper network</li>
+              <li>Interactive popup to choose train / debug mode, game speed, and number of games for every run</li>
+              <li>Automatic, sequential naming of models, plots, and CSV logs for hassle-free benchmarking</li>
+              <li>Live training graphs rendered in a separate process for smooth visualisation</li>
+              <li>Automated scripts to train both agents and run head-to-head comparison over 100 games</li>
+              <li>Consistent 750 × 750 board size to keep evaluation fair and comparable</li>
+              <li>Optional human-play mode for collecting supervised-learning datasets (coming soon)</li>
+            </ul>
+
+            <h4 class="text-light">Technical Implementation</h4>
+            <p class="text-light">
+              The core environment (<code>game.py</code>) models the Snake world and exposes a minimal API reminiscent of OpenAI Gym.  Each agent receives a flattened state vector comprising danger bits, current direction, and food location, enabling GPU-friendly batch processing.  A fixed-size replay buffer stores experience tuples which are sampled uniformly to break temporal correlations during training.
+            </p>
+            <p class="text-light">
+              The <strong>baseline agent</strong> mirrors Patrick’s original DQN architecture: a shallow feed-forward network trained with Mean-Squared Error on the temporal-difference target.  The <strong>smarter agent</strong> introduces a deeper four-layer network, a richer state (including snake length trend and relative tail position) and a shaped reward that penalises idle wandering while encouraging shorter paths to food.  Both agents share a common <code>Trainer</code> helper that handles optimiser steps, target-network synchronisation, and gradient clipping.
+            </p>
+            <p class="text-light">
+              Every experiment launches through a small Tkinter dialog where you specify debug/train mode, game speed, and desired game count.  In <em>debug mode</em> a separate <code>plot_process.py</code> is spawned, periodically reading a queue and drawing live score curves without blocking the GPU training loop.  All artefacts — models (<code>.pth</code>), plots (<code>.png</code>), and CSV logs — are saved with incrementing filenames so multiple runs never overwrite each other.
+            </p>
+
+            <h4 class="text-light">Challenges & Solutions</h4>
+            <p class="text-light">
+              <strong>Stability of Deeper Networks&nbsp;:</strong>  The smarter agent’s deeper architecture initially suffered from exploding gradients.  Gradient-clipping at 1.0 and a decaying learning-rate scheduler stabilised training while preserving learning capacity.
+            </p>
+            <p class="text-light">
+              <strong>Reward Hacking&nbsp;:</strong>  A naïve reward shaping led the agent to loop endlessly without seeking food.  Introducing a small time-penalty and a distance-to-food heuristic guided the policy towards more purposeful exploration.
+            </p>
+            <p class="text-light">
+              <strong>Reproducible Benchmarking&nbsp;:</strong>  Saving models / logs with unique sequential names and using a deterministic <code>torch.manual_seed</code> pipeline ensures that experiments can be repeated and compared objectively.
+            </p>
+
+            <h4 class="text-light">Benchmarking &amp; Analysis</h4>
+            <p class="text-light">
+              Automated scripts (<code>train_both_models.py</code> &amp; <code>compare_models.py</code>) train each agent for 10 000 games and then run a 100-game head-to-head evaluation.  Detailed plots and CSV metrics are produced — a concise write-up analysing these results will be added <em>very soon</em>.
+            </p>
+
+            <div class="alert alert-info mt-3">
+              <strong>What I Learned:</strong> Building this project strengthened my understanding of advanced DQN techniques, reward shaping, multiprocessing for real-time visualisation, and reproducible ML experimentation.  It also underscored the importance of rigorous benchmarking when claiming improvements over baseline models.
+            </div>
+
+            <p class="fst-italic text-light mt-3">
+              Repository: <a href="https://github.com/ghodketejas/snake-game-ai" target="_blank">GitHub Link</a>
+            </p>
+
+          </div>
     </div>
   </div>
-</main>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Tejas Ghodke</p>
-</footer>
+    </div> <!-- End AI/ML accordion -->
+  </section>
+
+</main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts.js"></script>
