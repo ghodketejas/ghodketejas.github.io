@@ -431,6 +431,11 @@ button.btn-outline-info:hover {
   flex-shrink: 0;
 }
 
+/* Hide suggestion buttons after first chat message */
+.chat-has-content .hint-container {
+  display: none !important;
+}
+
 /* Show Hint Buttons When Input is Focused */
 #chat-input:focus ~ .hint-container {
   opacity: 1;
@@ -636,7 +641,7 @@ button.btn-outline-info:hover {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding-bottom: 165px;
+  padding-bottom: 20px;
 }
 #chat-container:hover, #chat-container:focus-within {
   box-shadow: 0 0 12px 2px #0dcaf0;
@@ -820,11 +825,10 @@ body > .container #chat-container {
 
 /* Chat controls wrapper */
 #chat-controls {
-  position: absolute;
-  bottom: 12px;
-  left: 20px;
-  right: 20px;
-  padding: 0;
+  position: static;
+  width: 100%;
+  margin-top: auto;
+  padding: 0 0 10px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
