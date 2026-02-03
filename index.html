@@ -71,24 +71,25 @@
     </div>
   </div>
 
-  <!-- Floating Chat Button -->
+  <!-- AI ASSISTANT TEMPORARILY DISABLED -->
+  <!-- Floating Chat Button
   <button id="open-chat-btn" style="display: flex; align-items: center; justify-content: center; position: fixed; bottom: 32px; left: 32px; width: 56px; height: 56px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.18); border: none; z-index: 1200; cursor: pointer; transition: box-shadow 0.2s;">
     <svg width="28" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M21 15.5C21 16.3284 20.3284 17 19.5 17H7.41421L3.70711 20.7071C3.07714 21.3371 2 20.8906 2 20.0001V4.5C2 3.67157 2.67157 3 3.5 3H19.5C20.3284 3 21 3.67157 21 4.5V15.5Z" stroke="#0dcaf0" stroke-width="2"/>
     </svg>
   </button>
 
-  <!-- Chat Overlay (hidden by default) -->
+  Chat Overlay (hidden by default)
   <div id="chat-overlay">
     <button id="close-chat-btn">&times;</button>
     <div id="chatbox-center">
-      <!-- Chatbot Box moved here -->
+      Chatbot Box moved here
       <div id="chat-container" class="with-avatar">
         <img id="chat-avatar" src="images/ai_img_1.png" alt="AI Avatar">
         <div class="chat-avatar-intro">Hey, I am Tejas's AI assistant. Talk with me as you would naturally.</div>
         <div id="chat-log"></div>
 
-        <!-- Begin chat controls wrapper -->
+        Begin chat controls wrapper
         <div id="chat-controls" class="w-100 d-flex flex-column">
           <input type="text" id="chat-input" class="form-control" placeholder="Ask me anything..." />
           <button class="btn btn-outline-info mt-2 w-100" onclick="sendChat()">Send</button>
@@ -96,15 +97,16 @@
             <p class="hint-note">Try asking:</p>
             <div class="hint-buttons">
               <button onclick="loadSample('What projects has Tejas worked on?')">Projects?</button>
-              <button onclick="loadSample('What’s Tejas favorite programming language?')">Fav language?</button>
+              <button onclick="loadSample('What&apos;s Tejas favorite programming language?')">Fav language?</button>
               <button onclick="loadSample('Tell me something fun about Tejas!')">Fun fact?</button>
             </div>
           </div>
         </div>
-        <!-- End chat controls wrapper -->
+        End chat controls wrapper
       </div>
     </div>
   </div>
+  -->
 
 <!-- BOOTSTRAP JS + ICONS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -113,6 +115,7 @@
 <!-- JS cookies to track user visits -->
 <script src="scripts.js"></script>
 
+<!-- AI ASSISTANT TEMPORARILY DISABLED
 <script>
 // Show chat overlay
 const openChatBtn = document.getElementById('open-chat-btn');
@@ -129,5 +132,6 @@ closeChatBtn.addEventListener('click', function() {
   openChatBtn.style.display = 'flex';
 });
 </script>
+-->
 </body>
 </html>

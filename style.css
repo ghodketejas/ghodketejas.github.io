@@ -416,7 +416,18 @@ html {
   50% { border-color: transparent }
 }
 
+/* AI ASSISTANT TEMPORARILY DISABLED */
 /* Chatbot Container */
+
+/* Fade In Animation - kept for visit-message */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
 #chat-container {
   max-width: 930px;
   margin: 50px auto;
@@ -546,14 +557,6 @@ button.btn-outline-info:hover {
 .hint-buttons button:hover {
   background-color: #00f2ff;
   color: black;
-}
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Typing Animation for TejasBot */
@@ -842,6 +845,7 @@ body > .container #chat-container {
   opacity: 1;
   transform: none;
 }
+*/
 
 /* Game Demo Container Styles */
 .game-demo-container {
@@ -888,6 +892,7 @@ body > .container #chat-container {
     padding-bottom: 75%; /* Slightly taller on mobile for better touch interaction */
   }
   
+  /* AI ASSISTANT TEMPORARILY DISABLED
   #chat-container {
     height: 95vh;
     max-height: 95vh;
@@ -905,8 +910,10 @@ body > .container #chat-container {
     font-size: 0.9rem;
     padding: 8px 12px;
   }
+  */
 }
 
+/* AI ASSISTANT TEMPORARILY DISABLED
 /* Chat controls wrapper */
 #chat-controls {
   position: static;
@@ -926,3 +933,4 @@ body > .container #chat-container {
   margin: 0;
   flex: 1; /* keep space in layout */
 }
+*/

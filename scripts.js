@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Chat Input: Enter Key Sends ---
+  // AI ASSISTANT TEMPORARILY DISABLED
+  /*
   const chatInput = document.getElementById("chat-input");
   if (chatInput) {
     chatInput.addEventListener("keydown", function (e) {
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener("click", () => {
       const text = btn.textContent.trim();
       if (text.includes("Projects")) loadSample("What projects have you worked on?");
-      else if (text.includes("language")) loadSample("What’s your favorite programming language?");
+      else if (text.includes("language")) loadSample("What's your favorite programming language?");
       else if (text.includes("fun")) loadSample("Tell me something fun about you!");
     });
   });
@@ -143,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chatOverlay.style.display = 'none';
     openChatBtn.style.display = 'flex';
   });
+  */
 });
 
 // Digital Clock
@@ -222,6 +225,8 @@ fetch("https://xkcd.vercel.app/?comic=latest")
     if (title) title.textContent = data.title;
   });
 
+// AI ASSISTANT TEMPORARILY DISABLED
+/*
 async function sendChat() {
   const input = document.getElementById("chat-input");
   const log = document.getElementById("chat-log");
@@ -292,3 +297,4 @@ function loadSample(text) {
     sendChat();
   }, 50);
 }
+*/
