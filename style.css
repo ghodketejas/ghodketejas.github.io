@@ -47,9 +47,8 @@ body::before {
 }
 .navbar-brand {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.5rem 0;
-  transition: font-size 0.3s ease;
 }
 .nav-link {
   font-size: 1rem;
@@ -66,51 +65,32 @@ body::before {
 /* Large screens (992px and up) - Larger navbar */
 @media (min-width: 992px) {
   .navbar {
-    min-height: 65px;
-    padding: 0.65rem 1.25rem;
+    min-height: 70px;
+    padding: 0.75rem 1.5rem;
   }
   .navbar-brand {
-    font-size: 1.5rem;
-    padding: 0.65rem 0;
-    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 0.75rem 0;
   }
   .nav-link {
-    font-size: 1.05rem;
-    padding: 0.65rem 1.15rem;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
   }
 }
 
 /* Extra large screens (1200px and up) - Even larger navbar */
 @media (min-width: 1200px) {
   .navbar {
-    min-height: 72px;
-    padding: 0.8rem 1.75rem;
+    min-height: 80px;
+    padding: 1rem 2rem;
   }
   .navbar-brand {
-    font-size: 1.7rem;
-    padding: 0.8rem 0;
-    font-weight: 600;
-  }
-  .nav-link {
-    font-size: 1.15rem;
-    padding: 0.8rem 1.35rem;
-  }
-}
-
-/* Extra extra large screens (1400px and up) - Maximum size */
-@media (min-width: 1400px) {
-  .navbar {
-    min-height: 78px;
-    padding: 0.9rem 2rem;
-  }
-  .navbar-brand {
-    font-size: 1.9rem;
-    padding: 0.9rem 0;
-    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 1rem 0;
   }
   .nav-link {
     font-size: 1.2rem;
-    padding: 0.9rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -150,19 +130,13 @@ body::before {
 /* Adjust landing page padding for larger navbars */
 @media (min-width: 992px) {
   .landing {
-    padding-top: 95px;
+    padding-top: 100px;
   }
 }
 
 @media (min-width: 1200px) {
   .landing {
-    padding-top: 105px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .landing {
-    padding-top: 115px;
+    padding-top: 120px;
   }
 }
 
@@ -176,12 +150,6 @@ body::before {
 @media (min-width: 1200px) {
   main.container.pt-5 {
     padding-top: 5rem !important; /* Even more padding for XL screens */
-  }
-}
-
-@media (min-width: 1400px) {
-  main.container.pt-5 {
-    padding-top: 6rem !important; /* Maximum padding for XXL screens */
   }
 }
 
@@ -263,19 +231,13 @@ main.resume-content {
 /* Adjust resume content padding for larger navbars */
 @media (min-width: 992px) {
   main.resume-content {
-    padding-top: 115px;
+    padding-top: 120px;
   }
 }
 
 @media (min-width: 1200px) {
   main.resume-content {
-    padding-top: 125px;
-  }
-}
-
-@media (min-width: 1400px) {
-  main.resume-content {
-    padding-top: 135px;
+    padding-top: 140px;
   }
 }
 
@@ -577,7 +539,6 @@ html {
   max-width: 100%;
   box-sizing: border-box;
   word-break: keep-all;
-  text-align: center;
 }
 
 @keyframes typing {
@@ -1071,15 +1032,15 @@ body > .container #chat-container {
 
   /* Smaller typewriter text - very small screens */
   .typewriter-text {
-    font-size: 1rem;
-    width: 0;
-    max-width: 85%;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #0dcaf0;
-    animation: typing-mobile-small 2.5s steps(23, end) forwards, blink 0.75s step-end infinite;
+    animation: typing-mobile-small 2.5s steps(26, end), blink 0.75s step-end infinite;
     letter-spacing: 0.2px;
-    padding: 0;
+    padding: 0 5px;
     box-sizing: border-box;
     margin: 0 auto;
     text-align: center;
@@ -1087,9 +1048,13 @@ body > .container #chat-container {
   }
   
   @keyframes typing-mobile-small {
+    from { 
+      width: 0;
+      max-width: 0;
+    }
     to { 
-      width: 85%;
-      max-width: 85%;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -1166,20 +1131,16 @@ body > .container #chat-container {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    padding: 0 10px;
+    padding: 0 5px;
     box-sizing: border-box;
   }
   
-  /* Typewriter text container - ensure it doesn't overflow */
-  .landing .d-flex h1 {
+  /* Typewriter text container */
+  .typewriter-text {
+    display: block;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
   }
 
   /* Social Icons */
@@ -1196,15 +1157,15 @@ body > .container #chat-container {
 
   /* Typewriter text - mobile optimized */
   .typewriter-text {
-    font-size: 1.2rem;
-    width: 0;
-    max-width: 90%;
+    font-size: 1.3rem;
+    width: 100%;
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #0dcaf0;
-    animation: typing-mobile 2.5s steps(25, end) forwards, blink 0.75s step-end infinite;
+    animation: typing-mobile 2.5s steps(28, end), blink 0.75s step-end infinite;
     letter-spacing: 0.3px;
-    padding: 0;
+    padding: 0 5px;
     box-sizing: border-box;
     margin: 0 auto;
     text-align: center;
@@ -1212,9 +1173,13 @@ body > .container #chat-container {
   }
   
   @keyframes typing-mobile {
+    from { 
+      width: 0;
+      max-width: 0;
+    }
     to { 
-      width: 90%;
-      max-width: 90%;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
