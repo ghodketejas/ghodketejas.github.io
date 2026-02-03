@@ -39,8 +39,6 @@ body::before {
   font-weight: 500;
   z-index: 1030; /* Ensure navbar stays above all content */
   position: relative;
-  min-height: 56px;
-  padding: 0.5rem 1rem;
 }
 .navbar.fixed-top {
   z-index: 1030;
@@ -48,11 +46,6 @@ body::before {
 .navbar-brand {
   font-weight: 600;
   font-size: 1.1rem;
-  padding: 0.5rem 0;
-}
-.nav-link {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
 }
 .nav-link.active,
 .nav-link:hover {
@@ -62,47 +55,10 @@ body::before {
   background-color: #0a0a0a !important;
 }
 
-/* Large screens (992px and up) - Larger navbar */
-@media (min-width: 992px) {
-  .navbar {
-    min-height: 70px;
-    padding: 0.75rem 1.5rem;
-  }
-  .navbar-brand {
-    font-size: 1.4rem;
-    padding: 0.75rem 0;
-  }
-  .nav-link {
-    font-size: 1.1rem;
-    padding: 0.75rem 1.25rem;
-  }
-}
-
-/* Extra large screens (1200px and up) - Even larger navbar */
-@media (min-width: 1200px) {
-  .navbar {
-    min-height: 80px;
-    padding: 1rem 2rem;
-  }
-  .navbar-brand {
-    font-size: 1.6rem;
-    padding: 1rem 0;
-  }
-  .nav-link {
-    font-size: 1.2rem;
-    padding: 1rem 1.5rem;
-  }
-}
-
 /* Mobile navigation improvements */
 @media (max-width: 768px) {
-  .navbar {
-    min-height: 56px;
-    padding: 0.5rem 1rem;
-  }
   .navbar-brand {
     font-size: 1rem;
-    padding: 0.5rem 0;
   }
   .navbar-nav {
     padding-top: 10px;
@@ -125,32 +81,6 @@ body::before {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-}
-
-/* Adjust landing page padding for larger navbars */
-@media (min-width: 992px) {
-  .landing {
-    padding-top: 100px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .landing {
-    padding-top: 120px;
-  }
-}
-
-/* Adjust main container padding for larger navbars (waph.html, projects.html) */
-@media (min-width: 992px) {
-  main.container.pt-5 {
-    padding-top: 4rem !important; /* Increased from default pt-5 (3rem) */
-  }
-}
-
-@media (min-width: 1200px) {
-  main.container.pt-5 {
-    padding-top: 5rem !important; /* Even more padding for XL screens */
-  }
 }
 
 /* Profile Image */
@@ -226,19 +156,6 @@ main.resume-content {
   max-width: 850px;
   margin: auto;
   padding: 100px 20px 60px;
-}
-
-/* Adjust resume content padding for larger navbars */
-@media (min-width: 992px) {
-  main.resume-content {
-    padding-top: 120px;
-  }
-}
-
-@media (min-width: 1200px) {
-  main.resume-content {
-    padding-top: 140px;
-  }
 }
 
 /* Headings */
