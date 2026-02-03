@@ -10,16 +10,6 @@ body {
   position: relative;
 }
 
-/* Ensure navbar is always on top */
-.navbar.fixed-top {
-  z-index: 1030 !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
 /* Patterned Background */
 body::before {
   content: "";
@@ -37,11 +27,6 @@ body::before {
 /* Navigation */
 .navbar {
   font-weight: 500;
-  z-index: 1030; /* Ensure navbar stays above all content */
-  position: relative;
-}
-.navbar.fixed-top {
-  z-index: 1030;
 }
 .navbar-brand {
   font-weight: 600;
@@ -75,12 +60,6 @@ body::before {
   padding-top: 80px;
   padding-bottom: 10px;
   min-height: 100vh;
-  position: relative;
-  z-index: 1;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 /* Profile Image */
@@ -454,8 +433,6 @@ html {
   font-size: 2.5rem;
   width: 21ch;
   max-width: 100%;
-  box-sizing: border-box;
-  word-break: keep-all;
 }
 
 @keyframes typing {
@@ -947,32 +924,9 @@ body > .container #chat-container {
     border-width: 2px;
   }
 
-  /* Smaller typewriter text - very small screens */
+  /* Smaller typewriter text */
   .typewriter-text {
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #0dcaf0;
-    animation: typing-mobile-small 2.5s steps(26, end), blink 0.75s step-end infinite;
-    letter-spacing: 0.2px;
-    padding: 0 5px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    text-align: center;
-    display: inline-block;
-  }
-  
-  @keyframes typing-mobile-small {
-    from { 
-      width: 0;
-      max-width: 0;
-    }
-    to { 
-      width: 100%;
-      max-width: 100%;
-    }
+    font-size: 1.5rem;
   }
 
   /* Smaller social icons */
@@ -1032,32 +986,6 @@ body > .container #chat-container {
     padding-top: 100px;
     padding-left: 15px;
     padding-right: 15px;
-    position: relative;
-    z-index: 1;
-    overflow-x: hidden;
-  }
-  
-  /* Ensure content doesn't appear above navbar */
-  .landing > * {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Container for typewriter text */
-  .landing .d-flex {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    padding: 0 5px;
-    box-sizing: border-box;
-  }
-  
-  /* Typewriter text container */
-  .typewriter-text {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
   }
 
   /* Social Icons */
@@ -1072,32 +1000,11 @@ body > .container #chat-container {
     font-size: 2rem;
   }
 
-  /* Typewriter text - mobile optimized */
+  /* Typewriter text */
   .typewriter-text {
-    font-size: 1.3rem;
-    width: 100%;
+    font-size: 1.8rem;
+    width: auto;
     max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #0dcaf0;
-    animation: typing-mobile 2.5s steps(28, end), blink 0.75s step-end infinite;
-    letter-spacing: 0.3px;
-    padding: 0 5px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    text-align: center;
-    display: inline-block;
-  }
-  
-  @keyframes typing-mobile {
-    from { 
-      width: 0;
-      max-width: 0;
-    }
-    to { 
-      width: 100%;
-      max-width: 100%;
-    }
   }
 
   /* Visit message */
@@ -1278,8 +1185,7 @@ body > .container #chat-container {
 
   /* Typewriter text */
   .typewriter-text {
-    font-size: 2rem;
-    max-width: 100%;
+    font-size: 2.2rem;
   }
 
   /* Visit message */
@@ -1424,27 +1330,6 @@ pre code {
   * {
     max-width: 100%;
     box-sizing: border-box;
-  }
-  
-  /* Ensure navbar stays on top */
-  .navbar.fixed-top {
-    z-index: 1030 !important;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Ensure all content is below navbar */
-  body > *:not(.navbar) {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Landing page container */
-  .landing {
-    margin-top: 0;
-    padding-top: 100px;
   }
 }
 
