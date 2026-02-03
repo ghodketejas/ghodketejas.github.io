@@ -146,6 +146,89 @@ ul {
   padding-left: 20px;
 }
 
+/* Education Section Formatting */
+.education-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0;
+}
+
+.education-right {
+  margin-left: auto;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.education-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.education-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.education-list-item::before,
+.education-list-item::after,
+.education-list-item::marker {
+  display: none !important;
+  content: "" !important;
+}
+
+.education-list div {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+.education-list-item > span:first-child {
+  flex: 1;
+}
+
+/* Experience Section Formatting */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.experience-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.experience-date {
+  margin-left: auto;
+  white-space: nowrap;
+  padding-left: 20px;
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+/* Availability Section */
+.availability-section {
+  margin-top: 40px;
+}
+
+.availability-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(13, 202, 240, 0.1);
+  border-left: 4px solid #0dcaf0;
+  border-radius: 6px;
+}
+
 /* Footer */
 footer {
   background-color: #1c1c1c;
